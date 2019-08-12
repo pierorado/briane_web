@@ -1,0 +1,4 @@
+[27-Feb-2019 13:13:02 America/Chicago] PHP Warning:  require(../includes/funciones.php): failed to open stream: No such file or directory in /home/briane19/public_html/submenu/intranet.php on line 4
+[27-Feb-2019 13:13:02 America/Chicago] PHP Fatal error:  require(): Failed opening required '../includes/funciones.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/briane19/public_html/submenu/intranet.php on line 4
+[27-Feb-2019 13:23:57 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/briane19/public_html/includes/conexion.php on line 6
+[27-Feb-2019 13:30:26 America/Chicago] PHP Warning:  mysqli::mysqli(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/briane19/public_html/includes/conexion.php on line 6

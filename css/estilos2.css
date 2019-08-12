@@ -1,0 +1,40 @@
+.division2{
+	font-size: 13px;
+}
+.division2 a {
+	color: red;
+}
+#arriba11{
+	padding-left: 30PX;
+	margin-right:5px;
+	width: 500px;
+	height: 150px;
+	float: left;
+
+
+}
+#arriba22{
+	padding-right: 30px;
+	
+}
+#arriba33{
+	padding-left: 30PX;
+	margin-right:5px;
+	width: 500px;
+	height: 150px;
+	float: left;
+	padding-bottom: 30px;
+}
+#arriba44{
+	padding-right: 30px;
+
+}
+
+.form-container2{
+	margin: auto;
+	background-color: #fff;
+	width: 400px;
+	border:1px solid  #c7c7c7;
+	padding: 50px 60px;
+}
+

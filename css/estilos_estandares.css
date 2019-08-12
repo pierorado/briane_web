@@ -1,0 +1,91 @@
+.conten_secciones_estandar1{
+	max-width: 1100px;
+	margin: auto;
+	height: 700px;
+	padding-top: 100px;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Coda', cursive;
+}
+
+.estandar-gestion{
+	width: 380px;
+	height: 300px;
+	float: left;
+	color: #575756;
+}
+.estandar-gestion p{
+	color: #E20613;
+	font-weight: bold;
+    font-size:16px;
+}
+.estandar-gestion h2{
+	white-space:nowrap;
+	font-size: 25px;	
+	color: #575756;
+	
+}
+.estandar-gestion h3{
+	border-bottom: 2px solid #E20613;
+}
+
+.estandar-gestion2{
+	margin-top: 50px;
+	width: 380px;
+	height: 300px;
+	float: right;
+
+}
+.estandar-gestion2 img{
+
+	
+	float: right;
+}
+.satelital-contenido{
+	max-width: 1100px;
+	margin: auto;
+	height: 400px;
+	margin-top: 100px;
+	font-family: 'Coda', cursive;
+	justify-content: space-between;
+	align-items: center;
+}
+.estandar-satelite{
+	width: 380px;
+	height: 300px;
+	float: left;
+	color: #575756;
+}
+.estandar-satelite ul{
+	padding-left: 35px;
+}
+.estandar-satelite h2{
+	white-space:nowrap;
+	font-size: 25px;	
+
+}
+.estandar-satelite h3{
+	border-bottom: 2px solid #E20613;
+}
+.estandar-satelite2{
+	margin-top: 50px;
+	width: 380px;
+	height: 300px;
+	float: right;
+}
+.estandar-satelite2 img{
+	
+	float: right;
+}
+.estandares-servicios{
+	margin: auto;
+	position: relative;
+	max-width: 1550px;
+	height: 600px;	
+}
+.estandares-operaciones{
+	margin: auto;
+	position: relative;
+	max-width: 1550px;
+
+}
