@@ -59,44 +59,45 @@ include "../includes/conexion.php";
 	  </nav> 
 	</header>
 	<div class="informacion">
-	<form method="post"  action="">
+	<form method="post"  action="" class="form-control">
 		<table>
 			<tr>
 				<td><label for="textfield1">Ingresar Puesto :</label></td>
-				<td><input type="text" name="puesto" id="textfield1"><br><br></td>
+				<td><input type="text" class="form-control" name="puesto" id="textfield1"><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield2">Ingresar descripcion :</label></td>
-				<td><textarea name="descripcion" cols="90" rows="5" id="textfield2"></textarea><br><br></td>
+				<td><textarea  name="descripcion"  class="form-control" cols="90" rows="5" id="textfield2"></textarea><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield3">Ingresar requisitos :</label></td>
-				<td><textarea name="requisitos" cols="100" rows="5" id="textfield3"></textarea><br><br></td>
+				<td><textarea name="requisitos" class="form-control" cols="100" rows="5" id="textfield3"></textarea><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield4">Ingresar beneficios :</label></td>
-				<td><textarea name="beneficios" cols="100" rows="5" id="textfield4"></textarea><br><br></td>
+				<td><textarea name="beneficios" class="form-control" cols="100" rows="5" id="textfield4"></textarea><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield5">Ingresar requerimientos :</label></td>
-				<td><textarea name="requerimientos" cols="100" rows="5" id="textfield5"></textarea><br><br></td>
+				<td><textarea name="requerimientos" class="form-control" cols="100" rows="5" id="textfield5"></textarea><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield6">Ingresar datos generales :</label></td>
-				<td><textarea name="datos" cols="100" rows="5" id="textfield6"></textarea><br><br></td>
+				<td><textarea name="datos" class="form-control" cols="100" rows="5" id="textfield6"></textarea><br><br></td>
 			</tr>
 			<tr>
 				<td><label for="textfield7">Fecha de publicacion :</label><br></td>
-				<td><input type="date" name="fecha" id="textfield7"><br><br></td>
+				<td><input type="date" name="fecha" class="form-control" id="textfield7"><br><br></td>
 			</tr>
 
 		</table>
 		
-		<input type="submit" name="guardar" id="button" value="Agregar Ofertas">
-	</form>
-	<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable">
+		<input type="submit" name="guardar" id="button" class='btn btn-primary' value="Añadir">
+		<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable">
   ayuda
 </button>
+	</form>
+	
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -125,53 +126,51 @@ include "../includes/conexion.php";
     </div>
   </div>
 </div>
-	<table width="100%" border="1" rules="all">
-		<tr>
-			<td>Puesto</td>
-			
-			<td>Descripcion</td>
-			<td>Requisitos</td>
-			<td>Beneficios</td>
-			<td>Requerimientos</td>
-			<td>Datos generales</td>
-			<td>Fecha </td>
-			<td>Acciones </td>
+<div class="form-control" style="margin-top: 10px">
+<div class="card" >
+	<div class="header-table" style="padding: 15px">
+		<h4 class="tite">Tabla de Ofertas</h4>
+
+	</div>
+	<div class="content table-responsive table-full-width" style="padding: 20px">
+	<table  class="table table-secondary" >
+		<tr class="table-danger">
+			<th scope="col">#</th>
+			<td scope="col">Puesto</td>
+			<td scope="col">Fecha</td>
+			<td scope="col">Acciones</td>
 		</tr>
 		<?php  
 			$ss=mysqli_query($conexion,"SELECT * FROM ofertas ORDER BY id_ofertas DESC");
 			while ($rr=mysqli_fetch_array($ss)) {
+
+				$fecha= new DateTime($rr['fecha']);
+				$fecha = $fecha->format("d-m-Y"); 
+
 				?>
 				<tr>
 					<td>
+						<?php echo $rr['id_ofertas']; ?>
+					</td>
+					<td>
 						<?php echo $rr['puesto']; ?>
-					</td>
-					<td>
-						<?php echo $rr['descripcion']; ?>
-					</td>
-					<td>
-						<?php echo $rr['requisitos']; ?>
-					</td>
-					<td>
-						<?php echo $rr['beneficios']; ?>
-					</td>
-					<td>
-						<?php echo $rr['requerimientos']; ?>
-					</td>
-					<td>
-						<?php echo $rr['datos']; ?>
-					</td>
-					<td>
-						<?php echo date("d/m/Y",strtotime($rr['fecha'])); ?>
 					</td>
 					
 					<td>
-	 		
-	 				<a href='eliminar.php?id=<?php echo $rr['id_not']; ?>'><button type='button' class='btn btn-danger'>eliminar</button></a>
+						<?php echo $fecha; ?>
+					</td>
+					
+					<td>
+	 				<a href='admin_oferta_editar.php?id_of=<?php echo $rr['id_ofertas']; ?>'><button type='button' class='btn btn-warning'>Editar</button></a>
+	 				<a href='eliminar.php?id_of=<?php echo $rr['id_ofertas']; ?>'><button type='button' class='btn btn-danger'>eliminar</button></a>
 	 				</td>
 				</tr>
 			
 		<?php  } ?>
 	</table>
+	</div>
+	</div>
+	</div>
 	</div>
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/manta.js"></script>
@@ -193,9 +192,9 @@ include "../includes/conexion.php";
  	}else{
  		$query=mysqli_query($conexion,"INSERT INTO ofertas (puesto,descripcion,fecha,requisitos,beneficios,requerimientos,datos) VALUES ('$puesto','$descripcion','$fecha','$requisitos','$beneficios','$requerimientos','$datos')");
     if ($query) {
- 	 	 echo " la oferta se inserto correctamente";
+ 	 	 echo " la oferta se inserto correctamente ,Refrescar";
  	 }else{
- 	 	echo "error no se inserto";
+ 	 	echo "Error no se inserto , verifique que los campos no contengan ('') ";
  	 }
  	}
    

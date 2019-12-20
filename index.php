@@ -7,8 +7,8 @@ include "includes/conexion.php";
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Briane</title>
-	<meta name="description"content="TRANSPORTES BRIANE estamos orientando todos nuestros esfuerzos en brindarle un servicio de calidad en todos nuestros servicios,trabajamos con la consigna de ofrecer soluciones a la medida de nuestros clientes para satisfacer las necesidades de transporte terreste y carga pesada a nivel nacional.">
+	<title>Transportes Briane</title>
+	<meta name="description"content="Transportes Briane (Supervan S.A.C.) es una empresa dedicada al transporte terrestre de carga en general, granel, contenedores y cisternas.">
 
 <meta name="keywords"content="empresa de transporte, Briane transportes, Briane,camioneros,transportes de carga">
 	<meta name="viewport"  content="width=device-width,user-scalable=no,initial-scale=1, maximum-scale=1,minimum-scale=1.0">
@@ -220,13 +220,13 @@ include "includes/conexion.php";
 		    				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						  <div class="carousel-inner">
 						    <div class="carousel-item active">
-						      <img src="img/maxima2.png" class="d-block w-100" alt="...">
+						      <img src="img/maxima2.png" class="d-block w-100" alt="Transportes Briane">
 						    </div>
 						    <div class="carousel-item">
-						      <img src="img/maxima3.png" class="d-block w-100" alt="...">
+						      <img src="img/maxima3.png" class="d-block w-100" alt="Transportes Briane">
 						    </div>
 						    <div class="carousel-item">
-						      <img src="img/maxima4.png" class="d-block w-100" alt="...">
+						      <img src="img/maxima4.png" class="d-block w-100" alt="Transportes Briane">
 						    </div>
 						  </div>
 						  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -536,17 +536,24 @@ include "includes/conexion.php";
 
 		 <div class="contenedor-noticias">
 		 <div class="encabezado-noticia">
-		 	<h1>LO MÁS LEIDO</h1>
+		 	<h1>ÚLTIMAS NOTICIAS</h1>
 		 </div>
 		 <?php
-	  		 $consul="SELECT * FROM noticia ORDER BY id_not DESC";
+		 	$i=1;
+
+	  		 $consul="SELECT * FROM noticia ORDER BY id_not DESC LIMIT 6  ";
+	  	
 	  		$resrelac=$conexion->query($consul);
 	  		while ($not=$resrelac->fetch_array(MYSQLI_BOTH)) {
 	  			?>
 		 <div class="titulo-noticia">
-		 	<a href="submenu/noticias.php#noticia_<?php echo $not['idnot']; ?>"><h4><?php echo $not['titulo']; ?></h4></a>
-		 	
-	  			<?php echo $not['fecha']; ?>
+		 	<div class="num_not">
+		 		<h2><?php echo $i++?></h2>
+		 	</div>
+		 	<div class="texto_not">
+		 	<a href="submenu/newsone.php?id_not=<?php echo $not['id_not']; ?>"><h4><?php echo $not['titulo']; ?></h4></a>
+		 	</div>
+	  			
 		 	</div>
 		 	<?php
 	  		}

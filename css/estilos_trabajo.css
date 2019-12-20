@@ -1,0 +1,88 @@
+.seccion6BI h2{
+	
+		
+	color: #575756;
+	
+}
+.seccion6BI h5{
+	
+	font-size: 15px;	
+	color: #575756;
+	
+}
+.seccion6BI h3{
+	border-bottom: 2px solid #E20613;
+}
+.seccion6BI li {
+
+		    margin-left: 30px;
+    font-size:16px;
+}
+.seccion4BI img {
+	width: 100%;
+	
+}
+.portada-oferta{
+	margin-left: 35px;
+
+	
+}
+.laborales h2{
+	
+    color: #575756;
+	
+}
+.laborales h3{
+	font-size: 35px;
+    color: #575756;
+	border-bottom: 2px solid #E20613;
+}
+.ofertas{
+	
+	height: 200px;
+	background-color: #F1F1F2;
+	margin-bottom: 20px;
+	    
+}
+
+.offert_puesto{
+	
+	float: left;
+    width: 365px;
+    height: 185px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px 15px 15px 15px;
+	
+}
+.offert_date{
+float: left;
+width: 366px;
+text-align: center;
+}
+.offert_button{
+float: left;
+width: 366px;
+text-align: center;
+}
+.formu_works{
+	margin-top: 65px;
+}
+.formu_unete h3{
+	border-bottom: 2px solid #E20613;
+}
+
+/*detalles ofertas */
+.entrada-oferta2{
+	margin: auto;
+    position: relative;
+    max-width: 1550px;
+
+}
+.entrada-oferta2 .fondo_oferta2 {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    
+    height: 247px;
+}

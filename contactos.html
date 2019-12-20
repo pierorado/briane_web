@@ -2,12 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Inicio |Briane</title>
+	<title>Contactos</title>
 	<meta name="viewport"  content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/estilosp.css">
 	<link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
 	<link rel="shortcut icon" type="image/x-icon" href="img/ico_briane.ico" />
 </head>
 <body style="background-color: #F8F8F8">
@@ -97,9 +99,12 @@
 	  		<div class="col">
 	  			<div class="ubicacion-datos">
 	  				<h2>Datos de Ubicación</h2>
+
+	  				
+
 	  				<h3></h3>
 	  				<ul>
-
+	  				
 						<li><h4>PERÚ</h4></li>
 						<li><h2>Direccion</h2></li>
 						<li>Av.Elmer Faucett N° 5104</li>
@@ -132,85 +137,72 @@
 		<div class="cotiza1">
 	  	<h2 >COTIZA TU SERVICIO </h2>
 	  	<h3></h3>
-	  	<form class="was-validated " method="post" action="cotiza.php" novalidate>
+	  	<form class="form-group " method="post" action="cotiza.php" >
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationTooltip01">Asunto:</label>
-      <input type="text" class="form-control" id="validationTooltip01" name="asunto2" placeholder="Introducir asunto"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <input type="text" class="form-control" id="Casunto" name="asunto2" placeholder="Introducir asunto"  >
     </div>
+
     <div class="col-md-4 mb-3">
       <label for="validationTooltip02">Empresa:</label>
-      <input type="text" class="form-control" id="validationTooltip02" name="empresa" placeholder="Introducir empresa"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <input type="text" class="form-control" id="Cempresa" name="empresa" placeholder="Introducir empresa"  >
+      
     </div>
+
    <div class="col-md-4 mb-3">
       <label for="validationTooltip03">Telefono:</label>
-      <input type="text" class="form-control" id="validationTooltip03" name="telefono" placeholder="Introducir Telefono"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <input type="text" class="form-control" id="Ctelefono" name="telefono" placeholder="Introducir Telefono"  >
+      
     </div>
+
   </div>
+
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Correo electrónico:</label>
-      <input type="text" class="form-control" id="validationTooltip01" name="correo" placeholder="Introducir correo electronico"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <label for="validationTooltip04">Correo electrónico:</label>
+      <input type="email" class="form-control" id="Ccorreo" name="correo" placeholder="Introducir correo electronico"  >
+      
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Dirección del trabajo:</label>
-      <input type="text" class="form-control" id="validationTooltip02" name="direccion" placeholder="Introducir dirección"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <label for="validationTooltip05">Dirección del trabajo:</label>
+      <input type="text" class="form-control" id="Cdireccion" name="direccion" placeholder="Introducir dirección"  >
+      
     </div>
    <div class="col-md-4 mb-3">
-      <label for="validationTooltip03">Ciudad:</label>
-      <input type="text" class="form-control" id="validationTooltip03" name="ciudad" placeholder="Introducir ciudad"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <label for="validationTooltip06">Ciudad:</label>
+      <input type="text" class="form-control" id="Cciudad" name="ciudad" placeholder="Introducir ciudad"  >
+      
     </div>
   </div>
 <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Puesto:</label>
-      <input type="text" class="form-control" id="validationTooltip01" name="asunto2" placeholder="Introducir asunto"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <label for="validationTooltip07">Puesto:</label>
+      <input type="text" class="form-control" id="Cpuesto" name="puesto" placeholder="Introducir asunto"  >
+      
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">RUC:</label>
-      <input type="text" class="form-control" id="validationTooltip02" name="empresa" placeholder="Introducir empresa"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <label for="validationTooltip08">RUC:</label>
+      <input type="text" class="form-control" id="Cruc" name="ruc" placeholder="Introducir empresa"  >
+      
     </div>
    <div class="col-md-4 mb-3">
-      <label for="validationTooltip03">Colocar su link de su web corporativa:
+      <label for="validationTooltip09">Colocar su link de su web corporativa:
 </label>
-      <input type="text" class="form-control" id="validationTooltip03" name="telefono" placeholder="Introducir Telefono"  required>
-      <div class="valid-tooltip">
-        ¡Se ve bien!
-      </div>
+      <input type="text" class="form-control" id="Clink" name="link" placeholder="Introducir Telefono"  >
+      
     </div>
   </div>
 
-  <form class="was-validated">
+ 
   <div class="mb-3">
     <label for="validationTextarea">Mensaje:</label>
-    <textarea class="form-control is-invalid" id="validationTextarea" name="mensaje" placeholder="Introducir mensaje" required></textarea>
+    <textarea class="form-control" id="Cmensaje" name="mensaje" placeholder="Introducir mensaje" required></textarea>
    
   </div>
-  <button class="btn btn-dark" type="submit">Enviar</button>
+  <br>
+ <div id="response"></div>
+  <button type="button" id="but_submit"   class="btn btn-dark" >Enviar</button>
 </form>
 
 
@@ -265,10 +257,46 @@
 	  			
 	  			
 	  		</footer>
+
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	  		<script type="text/javascript">
+	  			$(document).ready(function(){
+	  				$("#but_submit").click(function(){
+
+	  					var asunto = $("#Casunto").val().trim();
+	  					var empresa = $("#Cempresa").val().trim();
+	  					var telefono = $("#Ctelefono").val().trim();
+	  					var correo = $("#Ccorreo").val().trim();
+	  					var direccion= $("#Cdireccion").val().trim();
+	  					var ciudad = $("#Cciudad").val().trim();
+	  					var puesto = $("#Cpuesto").val().trim();
+	  					var ruc = $("#Cruc").val().trim();
+	  					var link = $("#Clink").val().trim();
+	  					var mensaje = $("#Cmensaje").val().trim();
+
+	  					$.ajax({
+	  						url:'cotiza.php',
+	  						type:'post',
+	  						data:{"empresa":empresa,"asunto2":asunto,"telefono":telefono,"correo":correo,"direccion":direccion,"ciudad":ciudad,"puesto":puesto,"ruc":ruc,"mensaje":mensaje,"link":link},
+	  							success:function(response){
+	  								var msg = "";
+
+	  								
+	  								$("#response").html(response);
+
+	  							}
+	  						});
+
+
+
+	  				});
+	  			});
+
+
+	  		</script>
 	<script type="text/javascript" src="js/manta.js"></script>
 	
-	<script type="text/javascript" src="node_modules/popper.js/dist/popper.min.js"></script>
+	
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

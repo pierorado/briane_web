@@ -58,11 +58,10 @@ include "includes/conexion.php";
         				</a>
         				<input type="checkbox" id="sm1" >
 			 			<ul class="sub-menu">
-			 				<li><a href="division.html#propuesta" >Nuetra propuesta de valor</a></li>
-			 				<li><a href="division.html#servicios" >SERVICIOS PORTUARIOS</a></li>
-			 				<li><a href="division.html#construccion" >CONSTRUCCIÓN</a></li>
-			 				<li><a href="division.html#mineria" >MINERÍA Y ENERGÍA</a></li>
-			 				<li><a href="division.html#proyectos" >PROYECTOS</a></li>
+			 				<li><a href="division.html#propuesta" >Nuetros Servicios</a></li>
+			 				<li><a href="division.html#servicios" >Servicios Portuarios</a></li>
+			 				<li><a href="division.html#operacion" >Operación Minera</a></li>
+			 				<li><a href="division.html#ventajas" >Ventajas Competitivas</a></li>
 			 			</ul>
 			 		</li>
 			 		<li><a href="estandares.html" >ESTANDARES DE GESTIÓN </a></li>
@@ -107,9 +106,10 @@ include "includes/conexion.php";
 			<section class="parrafo" id="seccion5">
 
 				<div class="informacion">
-	  		<div class="row">
-	  		<div class="col">
-	  			<div class="seccion6BI">
+					<div class="trabaja_content">
+	  		<div class=" row">
+	  		<div class="seccion6BI col-md-5">
+	  			
 	  				<h2>¿Porqué elegir BRIANE?</h2>
 	  				<h3></h3>
 	  				<h5>Profesional del Transporte</h5>
@@ -118,17 +118,17 @@ include "includes/conexion.php";
 						<li>Por que ingresas a planillas desde le primer día.</li>
 						<li>Movemos mayor carga que las competencia.</li>
 						<li>Contamos con viáticos asegurados en cada jornada.</li>
-						<li>Alto reconocimiento por tu esfuerzo generando atractivos <br> ingresos adicionales.</li>
-						<li>Contamos con linea de carrera para poder asegurartu<br> crecimiento profesional.</li>
+						<li>Alto reconocimiento por tu esfuerzo generando atractivos  ingresos adicionales.</li>
+						<li>Contamos con linea de carrera para poder asegurar tu crecimiento profesional.</li>
 						<li>Capacitación constante.</li>
-						<li>Mayores ingresos asegurados gracias a nuestro<br> almacen que asegura la carga.</li>
+						<li>Mayores ingresos asegurados gracias a nuestro almacen que asegura la carga.</li>
 
 					</ul>
-	  			</div>
+	  			
 	  					
 	  		</div>
-	  		<div class="col">
-	  			<div class="seccion4BI">
+	  		<div class="seccion4BI col-md-5 offset-md-2">
+	  			
 	  			<h3></h3>
 	  				<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"   >
 					  <div class="carousel-inner"  >
@@ -160,19 +160,21 @@ include "includes/conexion.php";
 					  </a>
 					</div>
 	  				 				
-	  			</div>
+	  			
 	  			
 
 	  		</div>		
+	  	</div>
 	  	</div>
 	  	</div>
 			</section>
 			<section class="parrafo" id="seccion6">
 				<div id="mapa"  >
 				<div class="informacion">
-	  		<div class="row">
-	  		<div class="col">
-	  			<div class="seccion6BI">
+					<div class="trabaja_content">
+	  		<div class=" row">
+	  		<div class="seccion6BI col-md-5">
+	  			
 	  				<h2>Juntos con nuestra Comunidad</h2>
 	  				
 	  				<h3></h3>
@@ -183,11 +185,11 @@ include "includes/conexion.php";
 						<li>Nos capacitamos constantemente para poder desarrollar proyectos<br> con la comunidad.</li>
 
 					</ul>
-	  			</div>
+	  			
 	  					
 	  		</div>
-	  		<div class="col">
-	  			<div class="seccion4BI">
+	  		<div class="seccion4BI col-md-5 offset-md-2">
+	  			
 	  			<h3></h3>
 	  			<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
@@ -213,24 +215,27 @@ include "includes/conexion.php";
 					    <span class="sr-only">Next</span>
 					  </a>
 					</div> 
-	  				  				
-	  			</div>
+	  		
 	  				  				
 	  			</div>
 	  			
+	  			</div>
+	  		</div>
 
-	  		</div>		
+
 	  	</div>
+
 	  	</div>
 	  	
 			</section>
 			<section class="parrafo" id="seccion8">
 			<div class="informacion">
+			<div class="laborales">
 	  		<h2>Ofertas Laborales </h2>
 	  		<h3></h3>
 	  		<div class="portada-oferta">
 	  		<div class="row">
-	  		<div class="col">
+	  		<div class="col-4">
 	  			<h5>Puesto</h5>
 	  		</div>	
 	  		<div class="col">
@@ -239,23 +244,29 @@ include "includes/conexion.php";
 	  		</div>
 	  		</div>
 	  			<?php 
-	  			$consul="SELECT * FROM ofertas ORDER BY id_ofertas DESC";
-	  			$resrelac=$conexion->query($consul);
-	  			while ($not=$resrelac->fetch_array(MYSQLI_BOTH)) {
+	  			
+	  			$consul=mysqli_query($conexion,"SELECT * FROM ofertas ORDER BY id_ofertas DESC");
+	  			while ($not=mysqli_fetch_array($consul)) {
+
+	  				$fecha = new DateTime($not['fecha']);
+					$fecha = $fecha->format("d-m-Y"); 
+					
 	  				?>
-	  			<div class="ofertas">
-	  				<div class="row">
-	  				<div class="col">
+
+
+	  			<div class="ofertas" >
+	  				
+	  				<div class="offert_puesto ">
 	  				<h7><?php echo $not['puesto']; ?></h7>
 	  				<p><?php echo $not['descripcion']; ?></p>
 	  				</div>	
-	  				<div class="col">
-	  				<h7><?php echo date("d/m/Y",strtotime($not['fecha'])); ?></h7>
+	  				<div class="offert_date">
+	  				<h7><?php echo $fecha; ?></h7>
 	  				</div>
-	  				<div class="col">
-	  				<a href="submenu/oferta2.php?id_oferta=<?php echo $not['id_oferta']; ?>" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Oferta</a>
+	  				<div class="offert_button">
+	  				<a href="submenu/oferta2.php?id_ofertas=<?php echo $not['id_ofertas']; ?>" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Oferta</a>
 	  				</div>		
-	  				</div>
+	  				
 	  			</div>
 	  				<?php
 	  		}
@@ -263,67 +274,58 @@ include "includes/conexion.php";
 	  		?>	
 	  		
 	  				
-	  
+	  </div>
 	  	</div>
+
 		</section>
 		<section class="parrafo" id="seccion7">
 			<div class="informacion">
-	  		<div class="row">
-	  		<div class="col">
-	  			<div class="seccion6BI">
+	  		<div class="formu_unete row">
+	  			<div class="col-md-5">
 	  				<h2>Únete a Nosotros  </h2>
-	  				<h5>INGRESA TUS DATOS</h5>
 	  				<h3></h3>
-	  				<form class="was-validated " novalidate>  
+	  				
+	  				<p>Buscamos tu talento. Si deseas ser parte de nuestro equipo.Envía tu currículum online si quieres trabajar:</p>
+	  				</div>
+	  			<div class="formu_works	col-md-7 ">
+	  	<form class="form"  autocomplete="off" action="submenu/mail_offer.php" enctype="multipart/form-data" method="post">  
 						  <div class="form-group">
 						    <label for="validationTooltip01">Nombre</label>
-						    <input type="text" class="form-control" id="validationTooltip01" style="width: 540px; "  required>
-					      <div class="valid-tooltip" style="margin-top: -360px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
+						    <input type="text" name="nombre" class="form-control" id="Inombre"  >
+							      
 						  </div>
-						  <div class="form-group">
-						    <label for="validationTooltip01">E-mail</label>
-						    <input type="text" class="form-control" id="validationTooltip01" style="width: 540px; " required>
-						    <div class="valid-tooltip" style="margin-top: -280px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
 
-						  </div>
 						  <div class="form-group">
-						    <label for="validationTooltip01">Telefono</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-						    <div class="valid-tooltip" style="margin-top: -200px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
+						    <label for="validationTooltip02">E-mail</label>
+						    <input type="text" name="email" class="form-control" id="Iemail"   >
 						  </div>
+
 						  <div class="form-group">
-					    <label for="validationTooltip01">Ciudad</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-					    <div class="valid-tooltip" style="margin-top: -80px;margin-left: 180px;" >
-					       ¡Se ve bien!
-					      </div>
+						    <label for="validationTooltip03">Telefono</label>
+						    <input type="text" name="telefono" class="form-control" id="Itelefono" > 
+						  </div>
+
+						<div class="form-group">
+					    <label for="validationTooltip04">Ciudad</label>
+						    <input type="text" name="ciudad" class="form-control" id="Iciudad" >
 					  </div>
+
 					  	<div class="form-group">
-					    <label for="validationTooltip01">Puesto de Trabajo</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-					    <div class="valid-tooltip" style="margin-top: -80px;margin-left: 180px;" >
-					       ¡Se ve bien!
-					      </div>
+					    <label for="validationTooltip05">Puesto de Trabajo</label>
+						    <input type="text" name="puesto" class="form-control" id="Ipuesto">  
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="exampleFormControlFile1">Example file input</label>
-					    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+					    <label for="exampleFormControlFile1">Adjuntar CV</label>
+					    <input type="file" name="file" class="form-control-file" id="Ifile" >
 					  </div>
-					
+						<div id="response"></div>
 
-						  <button type="submit" class="btn btn-dark">Enviar</button>
+						  <button type="button" id="but_submit" class="btn btn-dark">Enviar</button>
 						  <button type="reset" name="cancelar" class="btn btn-dark">Borrar</button>
 					</form>
 	  			</div>
-	  					
-	  		</div>
+	  	
 	  			
 	  	</div>
 	  	</div>
@@ -379,8 +381,42 @@ include "includes/conexion.php";
 	  			
 	  		</footer>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+	  			$(document).ready(function(){
+	  				$("#but_submit").click(function(){
+
+	  					var nombre = $("#Inombre").val().trim();
+	  					var correo = $("#Iemail").val().trim();
+	  					var telefono = $("#Itelefono").val().trim();
+	  					var ciudad = $("#Iciudad").val().trim();
+	  					var puesto= $("#Ipuesto").val().trim();
+	  					var file = $("#Ifile");
+	  					var formData = new FormData();
+	  					var archivo = file[0].files;
+	  					formData.append('file',files);
+	  					$.ajax({
+	  						url:'submenu/mail_offer.php',
+	  						type:'post',
+	  						data:{"telefono":telefono,"correo":correo,"ciudad":ciudad,"puesto":puesto,"nombre":nombre,formData},
+	  						contentType: false,
+            				processData: false,
+	  							success:function(response){
+	  								var msg = "";
+	  								console.log(response);
+	  								
+	  								$("#response").html(response);
+
+	  							}
+	  						});
+
+
+
+	  				});
+	  			});
+
+
+	  		</script>
 	<script type="text/javascript" src="js/manta.js"></script>
-	<script type="text/javascript" src="node_modules/popper.js/dist/popper.min.js"></script>
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

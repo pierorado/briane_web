@@ -80,7 +80,22 @@ include "../includes/conexion.php";
 		</tr>
 		<?php
 
-		$consulta="SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,u.telefono,u.correo,u.nombre,u.paterno,u.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo";
+		//paginador
+		$sql_page=mysqli_query($conexion,"SELECT COUNT(*) as total_tabla from usuarios");
+		$resul_page=mysqli_fetch_array($sql_page);
+		$total_page=$resul_page['total_tabla'];
+
+		$por_pagina=5;
+		if (empty($_GET['pagina'])) {
+			$pagina=1;
+		}else{
+			$pagina=$_GET['pagina'];
+		}
+		$desde =($pagina-1)*$por_pagina;
+		$total_paginas=ceil($total_page/$por_pagina);
+
+		$consulta="SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,u.telefono,u.correo,u.nombre,u.paterno,u.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo 
+			ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
 		$respuesta=mysqli_query($conexion,$consulta);
 		$fila=mysqli_num_rows($respuesta);
 		if ($fila>0) {
@@ -112,6 +127,29 @@ include "../includes/conexion.php";
 		?>
 		
 	</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li ><a class="page-link" href="?pagina=<?php echo $pagina-1 ?>">Previous</a></li>
+    
+   
+    <?php 
+    	for ($i=1; $i<$total_paginas ; $i++) { 
+    		if ($i ==$pagina) {
+    			echo '<li class="page-item active" ><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';
+    		}else{ 
+    			echo '<li class="page-item " ><a class="page-link" href="?pagina='.$i.'">'.$i.'</a></li>';
+    		}
+    	
+    	}
+
+     ?>
+    
+    <li ><a class="page-link" href="?pagina=<?php echo $pagina+1 ?> ">Next</a></li>
+  </ul>
+</nav>
+
+
 </div>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="../js/manta.js"></script>

@@ -1,0 +1,69 @@
+.parte5 {
+margin: auto;
+	position: relative;
+	max-width: 1550px;
+
+}
+
+.parte5 .primero{
+	margin-top: 47px;
+	
+
+}
+.division-servicios{
+	margin-top: -80px;
+	 padding: 0px 1px 0px 15px;
+
+}
+.conten_secciones {
+	padding: 0px 15px 0px 15px;
+	
+	
+}
+.conten_secciones h2{
+	
+	font-size: 35px;
+	color: #575756;
+
+}
+.izquierda_propuesta{
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 520px;
+}
+.izquierda_propuesta h5 {
+	font-size: 18px;
+	padding-bottom: 12px;
+	
+}
+.izquierda_propuesta p {
+	font-size: 15px;
+	
+}
+.izquierda_propuesta ul li{
+
+	margin-left: 30px;
+	font-size: 15px;
+	
+}
+
+.derecha_propuesta p {
+	font-size: 15px;
+	
+}
+.derecha_propuesta h2 {
+	color: #575756;
+	padding-top: 20px;
+	
+}
+.derecha_propuesta ul {
+	
+	padding-top: 30px;
+	
+}
+.derecha_propuesta ul li{
+
+	margin-left: 30px;
+	font-size: 15px;
+	
+}

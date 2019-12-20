@@ -9,9 +9,9 @@ if ($inicio==null || $inicio='') {
 	die();
 
 }else{
-if ($_SESSION['rol']!= 1) {
- 	header("location:panel.php");
-}
+//if ($_SESSION['rol']!= 3) {
+ //	header("location:panel.php");
+//}
 require '../includes/funciones.php';
 require "../includes/conexion.php";
 
@@ -54,7 +54,9 @@ require "../includes/conexion.php";
 			<li class="active2"><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>
 			<li><a href="adminusuarios.php">Usuarios</a></li>
-			<?php } ?>
+			<?php }else if($_SESSION['rol']== 3){?>
+					<li><a href="adminoticia.php">Agregar Noticias</a></li>
+				<?php }?>
 			<li><a href="adminprofile.php">Perfil</a></li>
 			<li><a href="cerrar.php">Cerrar Sesion</a></li>
 			 		
@@ -66,20 +68,22 @@ require "../includes/conexion.php";
 
 
 	<div class="informacion">
-<form method="post" enctype="multipart/form-data" action="">
+<form method="post" class="form-control" enctype="multipart/form-data" action="">
 	<label for="textfield">Titulo de Noticia :</label>
-	<input type="text" name="titulo" id="textfield"><br>
+	<input type="text" class="form-control" name="titulo" id="textfield"><br>
 	<label for="textfield">Imagen :</label><br>
 	<label for="fileField"></label><br>
-	<input type="file" name="img" id="img" ><br>
+	<input type="file" class="form-control" name="foto" id="img" ><br>
+	<label for="textfield2">Fecha</label><br>
+	<input type="date" name="fecha" class="form-control" >
 	<label for="textfield2">Noticia</label><br>
-	<textarea name="noticia" cols="55" rows="8" id="textfield2"></textarea><br>
-	<input type="submit" name="guardar" id="button" value="Agregar Noticia">
-	
-</form>
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable">
+	<textarea name="noticia" class="form-control" cols="55" rows="8" id="textfield2"></textarea><br>
+	<input type="submit" class='btn btn-primary' name="guardar" id="button" value="Agregar Noticia">
+	<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalScrollable">
   ayuda
 </button>
+</form>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -108,13 +112,18 @@ require "../includes/conexion.php";
     </div>
   </div>
 </div>
+<div class="form-control" style="margin-top: 10px">
+<div class="header-table" style="padding: 15px">
+		<h4 class="tite">Tabla de Noticias </h4>
 
-<table width="100%" border="1" rules="all">
-	<tr>
-		<td>Titulo de Noticia</td>
-		<td>Imagen</td>
-		<td>Noticia</td>
-		<td>Acciones</td>
+	</div>
+<div class="content table-responsive table-full-width" style="padding: 20px">
+<table class="table table-secondary">
+	<tr class="table-danger">
+		<td scope="col">Titulo de Noticia</td>
+		<td scope="col">Imagen</td>
+		
+		<td scope="col">Acciones</td>
 	</tr>
 	<?php 
 	 $ss=mysqli_query($conexion,"SELECT * FROM noticia ORDER BY id_not DESC");
@@ -126,23 +135,23 @@ require "../includes/conexion.php";
 	 		</td>
 	 		<td>
 	 			<center>
-	 				<img width="50px" height="50px" src="../img/foto_<?php echo $rr['id_not']; ?>.jpg" >
+	 				<img width="50px" height="50px" src="../img/<?php echo $rr['foto']; ?>" >
 	 			</center>
 	 		</td>
-	 		<td>
-	 			 <?php echo $rr['noticias']; ?>
-	 		</td>
-	 		<td>
 	 		
-	 			<a href='eliminar.php?id=<?php echo $rr['idnot']; ?>'><button type='button' class='btn btn-danger'>eliminar</button></a>
+	 		<td>
+	 			<a href='admin_noticia_editar.php?idnot=<?php echo $rr['id_not']; ?>'><button type='button' class='btn btn-warning'>Editar</button></a>
+	 			<a href='noticia_eliminar.php?id_not=<?php echo $rr['id_not'];?>&foto=<?php echo $rr['foto']; ?>'><button type='button' class='btn btn-danger'>eliminar</button></a>
 	 		</td>
 	 	</tr>
    <?php  } ?>
 </table>
 </div>
+</div>
+</div>
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/manta.js"></script>
-	<script type="text/javascript" src="../node_modules/popper.js/dist/popper.min.js"></script>
+	
 	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
@@ -151,12 +160,55 @@ require "../includes/conexion.php";
 
  if (isset($_POST['guardar'])) {
  	
- $query=mysqli_query($conexion,"insert into noticia (titulo,noticia,fecha) values (' ".$_POST['titulo']."','".$_POST['noticia']."' ,NOW())" );
+ 	if (empty($_POST['titulo']) || empty($_POST['noticia']) || empty($_POST['fecha']) || empty($_FILES['foto']['name'])) 
+ 	{
+ 		echo "<p>Los campos son obligatorios</p>";
+ 	}else{
+
+ 		$titulo = $_POST['titulo'];
+ 		$noticia = $_POST['noticia'];
+ 		$fecha = $_POST['fecha'];
+
+ 		$foto = $_FILES['foto'];
+ 		$nombre_foto = $foto['name'];
+ 		$type  		= $foto['type'];
+ 		$url_temp  		= $foto['tmp_name'];
+ 		$imgNoticia = 'img_noticia.png';
+
+ 		if ($nombre_foto != '') {
+ 			$destino = '../img/';
+ 			$img_nombre = 'img_'.md5(date('d-m-y H:m:s'));
+ 			$imgNoticia = $img_nombre.'.jpg';
+ 			$src  = $destino.$imgNoticia;
+ 			
+ 		}
+ 		
+ 		$query_insert = mysqli_query($conexion,"INSERT INTO noticia(titulo,noticias,fecha,foto) VALUES ('$titulo','$noticia','$fecha','$imgNoticia')");
+
+ 		if ($query_insert) {
+
+ 			
+
+
+ 			if ($nombre_foto != '') {
+ 				
+ 				move_uploaded_file($url_temp,$src);
+ 				
+ 			}
+ 			echo "<p>Noticia insertado correctamente , Refrescar</p>";
+ 			
+ 		}else{
+ 			echo "<p>error al  insertar </p>";
+ 		}
+ 	}
+
+
+ /*$query=mysqli_query($conexion,"insert into noticia (titulo,noticias,fecha) values (' ".$_POST['titulo']."','".$_POST['noticia']."' ,NOW())" );
  if ($query) {    
  	 	 echo "<h1>la noticia se inserto correctamente .</h1>";
  	 }
  	 
- $ss=mysqli_query($conexion,"SELECT MAX(idnot) as id_maximo FROM noticia");
+ $ss=mysqli_query($conexion,"SELECT MAX(id_not) as id_maximo FROM noticia");
  if ($rr=mysqli_fetch_array($ss)) {
  	   $id_maximo=$rr['id_maximo'];
  }
@@ -169,6 +221,8 @@ require "../includes/conexion.php";
 		 }else{
 		 	echo "error";
 		 	 
+ }*/
  }
- }
+
+
 ?>

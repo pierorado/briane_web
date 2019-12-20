@@ -52,8 +52,10 @@ include "../includes/conexion.php";
 			<li><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>
 			<li><a href="adminusuarios.php">Usuarios</a></li>
-			<?php } ?>
-			<li class="active2"><a href="adminprofile.php">Perfil</a></li>
+			<?php }else if($_SESSION['rol']== 3){?>
+					<li><a href="adminoticia.php">Agregar Noticias</a></li>
+				<?php }?>
+			<li><a href="adminprofile.php">Perfil</a></li>
 			<li><a href="cerrar.php">Cerrar Sesion</a></li>
 			 		
 	 		</ul>

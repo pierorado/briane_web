@@ -23,67 +23,87 @@ include "../includes/conexion.php";
 	 <div class="contenedor" > 
 		<header>
 		
-		<div id="barra1">
-			<nav class="menu">
-	 		<div class="container-menu">
-	 			<div class="logo">
-	 				<div class="logo-name">
-	 					<img src="../img/logo02.png">
+		<nav id="menu1">
+	 	
+	 		
+	 				<div id="toggle-menu">
+	 					<img class="logo2" src="../img/logo02.png">
 	 					
-	 					
+	 					<label for="tm" ><span class="drop-icon">▾</span></label>
+	 				
 	 				</div>
-	 				<div class="icon-menu">
-	 					<a href="#" id="btn-menu" class="btn-menu"><span class="fa fa-bars"></span></a>
+	 				<input type="checkbox" id="tm">
+	 			<ul class="main-menu clearfix">
+	 				<div class="logo22">
+	 					<img  src="../img/logo02.png">
 	 				</div>
-	 			</div>
-	 		</div>
-	 		<div class="menu-link">
-	 			<ul >
-			 		<li><a href="../index.php" class="menu_item"  >VALOR AGREGADO</a></li>
-			 		<li><a href="briane.html" class="menu_item">BRIANE</a>
-			 			<ul class="submenu">
-			 				<li><a href="briane.html#seccion1" class="submenu_item">Misión,vision,valores</a></li>
-			 				<li><a href="briane.html#seccion2" class="submenu_item">Historia</a></li>
-			 				<li><a href="briane.html#seccion3" class="submenu_item">Cultura Briane</a></li>
-			 				<li><a href="briane.html#seccion4" class="submenu_item">Certificaciones</a></li>
+	 				
+			 		<li  ><a href="../index.php" >VALOR AGREGADO</a></li>
+			 		
+			 		<li ><a href="../submenu/briane.html" >BRIANE
+			 			<span class="drop-icon">▾</span>
+        				<label title="Toggle Drop-down" class="drop-icon" for="sm0">▾</label>
+        				</a>
+        				<input type="checkbox" id="sm0">
+			 			<ul class="sub-menu">
+			 				<li><a href="../submenu/briane.html#seccion1" >Misión,vision,valores</a></li>
+			 				<li><a href="../submenu/briane.html#seccion2" >Historia</a></li>
+			 				<li><a href="../submenu/briane.html#seccion3" >Cultura Briane</a></li>
+			 				<li><a href="../submenu/briane.html#seccion4" >Certificaciones</a></li>
 			 			</ul>
 			 		</li>
-			 		<li><a href="../division.html" class="../menu_item">SERVICIOS</a>
-			 			<ul class="submenu">
-			 				<li><a href="../division.html#propuesta" class="submenu_item">Nuetra propuesta de valor</a></li>
-			 				<li><a href="../division.html#servicios" class="submenu_item">SERVICIOS PORTUARIOS</a></li>
-			 				<li><a href="../division.html#construccion" class="submenu_item">CONSTRUCCIÓN</a></li>
-			 				<li><a href="../division.html#mineria" class="submenu_item">MINERÍA Y ENERGÍA</a></li>
-			 				<li><a href="../division.html#proyectos" class="submenu_item">PROYECTOS</a></li>
+
+			 		<li ><a href="../division.html">SERVICIOS
+			 			<span class="drop-icon">▾</span>
+        				<label title="Toggle Drop-down" class="drop-icon" for="sm1">▾</label>
+        				</a>
+        				<input type="checkbox" id="sm1" >
+			 			<ul class="sub-menu">
+			 				<li><a href="../division.html#propuesta" >Nuetra propuesta de valor</a></li>
+			 				<li><a href="../division.html#servicios" >Servicios Portuarios</a></li>
+			 				<li><a href="../division.html#operacion" >Operación Minera</a></li>
+			 				<li><a href="../division.html#ventajas" >Ventajas Competitivas</a></li>
+			 				
 			 			</ul>
 			 		</li>
-			 		<li><a href="../estandares.html" class="menu_item">ESTANDARES DE GESTIÓN </a></li>
-			 		<li class="active1"><a href="../trabajas.php" class="menu_item">TRABAJA CON NOSOTROS</a>
-			 		<ul class="submenu">
-			 				<li><a href="../trabajas.php#seccion5" class="submenu_item">¿Porqué elegir BRIANE?</a></li>
-			 				<li><a href="../trabajas.php#seccion6" class="submenu_item">Nuestra Comunidad</a></li>
-			 				<li><a href="../trabajas.php#seccion7" class="submenu_item">Únete a Nosotros</a></li>
-			 			</ul></li>
-			 		<li><a href="noticias.php" class="menu_item">NOTICIAS</a></li>
-			 		<li><a href="../contactos.html" class="menu_item">CONTACTENOS</a></li>
-			 		<li><a href="../submenu/intranet.php" class="menu_item">MÁS</a>
-			 			<ul class="submenu">
-			 				<li><a href="../submenu/intranet.php" class="submenu_item">INTRANET</a></li>
+			 		<li><a href="../estandares.html" >ESTANDARES DE GESTIÓN </a></li>
+			 		<li class="active2"><a href="../trabajas.php" >TRABAJA CON NOSOTROS
+			 			<span class="drop-icon">▾</span>
+        				<label title="Toggle Drop-down" class="drop-icon" for="sm2">▾</label>
+        			</a>
+        				<input type="checkbox" id="sm2">
+			 			<ul class="sub-menu">
+			 				<li><a href="../trabajas.php#seccion5" >¿Porqué elegir BRIANE?</a></li>
+			 				<li><a href="../trabajas.php#seccion6" >Nuestra Comunidad</a></li>
+			 				<li><a href="../trabajas.php#seccion7">Únete a Nosotros</a></li>
+			 			</ul>
+			 		</li>
+			 		<li ><a href="../submenu/noticias.php" >NOTICIAS</a></li>
+			 		<li><a href="../contactos.html" >CONTÁCTENOS</a></li>
+			 		<li ><a href="#" >MÁS
+			 			<span class="drop-icon">▾</span>
+        				<label title="Toggle Drop-down" class="drop-icon" for="sm3">▾</label>
+        			</a>
+        				<input type="checkbox" id="sm3">
+			 			<ul class="sub-menu">
+			 				<li><a href="intranet.php" >INTRANET</a></li>
+			 			<li><a href="http://briane.pe/Osticket/upload/index.php"target="_blank">TICKETS</a></li>
 			 			</ul>
 			 		</li>
 	 	</ul>
-	 	</div>
-	  </nav>
-		</div> 
+	 	
+	  </nav> 
 	</header>
 	<?php
  if(isset($_GET['id_ofertas'])) {
  	$consul=mysqli_query($conexion,"SELECT * FROM ofertas WHERE id_ofertas = '".$_GET['id_ofertas']."'");
  	while ($rr=mysqli_fetch_array($consul)) {
+ 		$fecha = new DateTime($rr['fecha']);
+		$fecha = $fecha->format("d-m-Y"); 
  	?>
 	<section class="parrafo" id="seccion3">
 	  		<div class="entrada-oferta2">
-	  			<img src="../img/fondo1.jpg" class="fondo">
+	  			<img src="../img/fondo1.jpg" class="fondo_oferta2">
 	  		<div class="informacion">
 	  			<div class="oferta-contenido">
 	  				
@@ -106,17 +126,17 @@ include "../includes/conexion.php";
 		<div class="informacion">
 		<div class="contenido-datos-oferta2">
  		<h4>Descripción:</h4>
-	    <p><i class="fas fa-angle-right"></i><?php echo $rr['descripcion']; ?> </p>
+	    <p><i class="fas fa-angle-right"></i><?php echo  nl2br($rr['descripcion']); ?> </p>
 		<h4>Requisitos:</h4>
-	    <p><i class="fas fa-angle-right"></i><?php echo $rr['requisitos']; ?></p>
+	    <p><i class="fas fa-angle-right"></i><?php echo  nl2br($rr['requisitos']); ?></p>
 	    <h4>Beneficios:</h4>
-	   	<p><i class="fas fa-angle-right"></i><?php echo $rr['beneficios']; ?></p>
+	   	<p><i class="fas fa-angle-right"></i><?php echo  nl2br($rr['beneficios']); ?></p>
 	   	<h4>Requerimientos:</h4>
-	   	<p><i class="fas fa-angle-right"></i><?php echo $rr['requerimientos']; ?></p>
+	   	<p><i class="fas fa-angle-right"></i><?php echo  nl2br($rr['requerimientos']); ?></p>
 	   	<h4>Datos Generales:</h4>
-	   	<p><i class="fas fa-angle-right"></i><?php echo $rr['datos']; ?></p>
+	   	<p><i class="fas fa-angle-right"></i><?php echo  nl2br($rr['datos']); ?></p>
 		<h4>Fecha de publicación:</h4>
-		<p><i class="fas fa-angle-right"></i><?php echo date("d/m/Y",strtotime($rr['fecha'])); ?></p>
+		<p><i class="fas fa-angle-right"></i><?php echo $fecha ?></p>
 		</div>
 			</div>			
 		</div>
@@ -125,58 +145,50 @@ include "../includes/conexion.php";
  }
 }
 ?>
-
+<div class="body-cont">
 <section class="parrafo" id="seccion7">
 			
 
-			<div class="informacion">
+			
 	  		<div class="row">
-	  		<div class="col">
+	  		<div class="formu_works col-md-7 ">
 	  			<div class="seccion6BI">
 	  				<h2>Únete a Nosotros  </h2>
 	  				<h5>INGRESA TUS DATOS</h5>
 	  				<h3></h3>
-	  				<form class="was-validated " novalidate>  
+	  				<form class="form" action="mail_offer_detail" autocomplete="off" enctype="multipart/form-data">  
 						  <div class="form-group">
 						    <label for="validationTooltip01">Nombre</label>
-						    <input type="text" class="form-control" id="validationTooltip01" style="width: 540px; "  required>
-					      <div class="valid-tooltip" style="margin-top: -360px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
+						    <input type="text" class="form-control" id="validationTooltip01"  required>
+					      
 						  </div>
+
 						  <div class="form-group">
 						    <label for="validationTooltip01">E-mail</label>
-						    <input type="text" class="form-control" id="validationTooltip01" style="width: 540px; " required>
-						    <div class="valid-tooltip" style="margin-top: -280px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
-
+						    <input type="text" class="form-control" id="validationTooltip01"  required>
+						    
 						  </div>
+
 						  <div class="form-group">
 						    <label for="validationTooltip01">Telefono</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-						    <div class="valid-tooltip" style="margin-top: -200px;margin-left: 100px;" >
-					       ¡Se ve bien!
-					      </div>
+						    <input type="text" class="form-control" id="validationTooltip01"  required>
+						    
 						  </div>
+
 						  <div class="form-group">
-					    <label for="validationTooltip01">Ciudad</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-					    <div class="valid-tooltip" style="margin-top: -80px;margin-left: 180px;" >
-					       ¡Se ve bien!
-					      </div>
-					  </div>
+					         <label for="validationTooltip01">Ciudad</label>
+						    <input type="text" class="form-control" id="validationTooltip01"  required>
+					    
+					     </div>
 					  	<div class="form-group">
 					    <label for="validationTooltip01">Puesto de Trabajo</label>
-						    <input type="text" class="form-control" id="validationTooltip01"style="width: 540px; " required>
-					    <div class="valid-tooltip" style="margin-top: -80px;margin-left: 180px;" >
-					       ¡Se ve bien!
-					      </div>
+						   <input type="text" class="form-control" id="validationTooltip01"  required>
+					    
 					  </div>
 					  
 					  <div class="form-group">
-					    <label for="exampleFormControlFile1">Example file input</label>
-					    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+					    <label for="exampleFormControlFile1">Adjuntar CV</label>
+					    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
 					  </div>
 					
 
@@ -188,8 +200,9 @@ include "../includes/conexion.php";
 	  		</div>
 	  			
 	  	</div>
-	  	</div>
+	  	
 		</section>
+		</div>
 
 </div>
 <footer>
@@ -241,7 +254,6 @@ include "../includes/conexion.php";
 	  		</footer>
 	<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="../js/manta.js"></script>
-	<script type="text/javascript" src="../node_modules/popper.js/dist/popper.min.js"></script>
 	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+.parte1{
+	width: 100%;
+    padding: 0px 1px 0px 15px;
+}
+.seccion1BI h2{
+	
+	font-size: 35px;	
+	color: #575756;
+	
+}
+.seccion1BI h3{
+	border-bottom: 2px solid #E20613;
+}
+.seccion1BI p {
+	
+	color: #E20613;
+	font-weight: bold;
+    font-size:16px;
+}
+.briane_parte2{
+	margin: auto;
+	position: relative;
+	max-width: 1550px;
+padding-top: 60px;
+}
+.historia-cronologia  {
+	margin-top: 30px;
+	border-right: 1px solid #323232;
+
+}
+.historia-cronologia a {
+	margin-top: 20px;
+
+	padding-left:15px;
+	width: 80px;
+}
+.parte2 {
+margin: auto;
+	position: relative;
+	max-width: 1550px;
+padding-top: 60px;
+}
+.seccion3BI{
+	margin-top: -400px;
+	width: 470px;
+}
+.seccion3BI h2{
+	
+	font-size: 35px;	
+	color: #FAE014;
+	
+}
+.seccion3BI h3{
+	border-bottom: 2px solid #E20613;
+}
+.seccion3BI p {
+	color: #FFF; 
+	font-size:15px; 
+	font-weight: bold;
+}
+.seccion2BI{
+	
+	
+}
+.seccion2BI h2{
+	font-size: 30px;
+	
+}
+
+.seccion2BI h4{
+	
+	color: #575756;
+	
+}
+.seccion2BI h3{
+	border-bottom: 2px solid #E20613;
+}
+.seccion2BI p {
+	
+	color: #E20613;
+	font-weight: bold;
+    font-size:16px;
+}
+.seccion2BD h2{
+	font-size: 16px;
+	color: #212529;
+}
+.seccion2BD img{
+	margin-top: 20px;
+	margin-right: 80px;
+}
+.seccion2BD h3{
+	border-bottom: 2px solid #E20613;
+}
+.homologacion  {
+	
+
+
+}
+.homologacion .btn-secondary  {
+	margin-left: 120px;
+	margin-top: -120px;
+}
