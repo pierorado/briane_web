@@ -115,7 +115,7 @@ include "../includes/conexion.php";
 			<td><?php echo $datos["materno"];?></td>
 			<td>
 				<a href="admineditar.php?idusuario=<?php echo $datos['idusuario'];?>" class="btn btn-info" role="button" aria-pressed="true">Editar</a>
-				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
+				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>&numero=<?php echo $datos["numero"];?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
 			</td>
 		</tr>
 	</tbody>

@@ -19,7 +19,7 @@ if (empty($_GET['idusuario'])) {
 			# code...
 		}
 		$idusuario=$_GET['idusuario'];
-		$sql=mysqli_query($conexion,"SELECT u.idusuario,u.numero,d.documento,u.idrol,u.idtipo,r.rol,u.clave,u.telefono,u.correo,u.nombre,u.paterno,u.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo WHERE u.idusuario=$idusuario");
+		$sql=mysqli_query($conexion,"SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.numero = p.id_numero WHERE u.idusuario=$idusuario");
 		$result=mysqli_num_rows($sql);
 		if ($result==0) {
 			header('Location:adminusuarios.php');

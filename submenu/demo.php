@@ -27,7 +27,7 @@ session_start();
 			header("Content-Type: text/html; charset=utf-8");
 		//seleccion que debe ser verdadera 
 
-			$consulta="select u.numero,u.clave,p.nombre,p.imagen ,u.idrol,u.paterno,u.materno from usuarios u  INNER JOIN profile p ON u.numero=p.id_numero where  numero='$numero2' and clave='$clave' and idtipo='$tipo'";
+			$consulta="select u.numero,u.clave,p.nombre,p.imagen ,u.idrol,p.paterno,p.materno from usuarios u  INNER JOIN profile p ON u.numero=p.id_numero where  numero='76202977' and clave='PIEROdead1998' and idtipo='1'";
 
 		$resultado=mysqli_query($conexion,$consulta);//ejecuta
 		mysqli_close($conexion);

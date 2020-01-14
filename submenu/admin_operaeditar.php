@@ -17,7 +17,7 @@ $clave=$_POST['clave'];
 
 	
 
-			$editar="UPDATE usuarios SET numero='$numero2',idtipo='$tipodoc',idrol='$tiporol',clave='$clave',telefono='$telefono',correo='$correo',nombre='$nombre',paterno='$paterno',materno='$materno' where idusuario=$idusuario";
+			$editar="UPDATE usuarios u  JOIN profile p ON u.idusuario=p.id_numero SET u.numero='$numero2',u.idtipo='$tipodoc',u.idrol='$tiporol',u.clave='$clave',p.id_numero='$numero2',p.telefono='$telefono',p.correo='$correo',p.nombre='$nombre',p.paterno='$paterno',p.materno='$materno' where u.numero2=$numero2";
 		$consulta="SELECT * from usuarios where  (numero='$numero2' AND idusuario=!$idusuario)  or (correo='$correo'  AND idusuario=!$idusuario)" ;
 			
 //seleccion que debe ser verdadera 
