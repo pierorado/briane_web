@@ -14,6 +14,8 @@ if ($inicio==null || $inicio='') {
 }else{
 	require '../includes/funciones.php';
 include "../includes/conexion.php";
+
+
 }
 ?>
 
@@ -66,7 +68,8 @@ include "../includes/conexion.php";
 <div class="container py-2 my-3">
 	 <div class="row">
         <div class="col-md-4 pr-md-5">
-            <img class="w-100 rounded border" src="https://cdn.bootstrapsnippet.net/assets/image/dummy-avatar.jpg" />
+            <img class="w-100 rounded border" src="../img/profile/<?php echo $_SESSION['photo']?>" />
+
             <div class="pt-4 mt-2">
                 <section class="mb-4 pb-1">
                    <div class="row">
@@ -90,6 +93,8 @@ include "../includes/conexion.php";
 			      	 <div class="d-flex align-items-center">
                 <h2 class="font-weight-bold m-0">
                     <?php echo $_SESSION['name']?>
+                   
+       
                 </h2>
                 
             	</div>

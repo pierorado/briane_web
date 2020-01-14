@@ -102,7 +102,7 @@ require "../includes/conexion.php";
         	<li>No hacer clic mas de 1 vez al boton agregar noticias </li>
         	<li>Para ver sus cambios en la tabla del admin regrese al  Panel y vuela a esta opcion de menu (agregar noticia) </li>
         	<li>Para ver sus cambios en la pagina web crear una nueva pestaña briane/noticias o copie el enlace  http://briane.pe/prueba/submenu/noticias.php   </li>
-        	<li>Si tiene alguna duda adicional   informar al programador</li>
+        	
         </ul>
       </div>
       <div class="modal-footer">
@@ -202,26 +202,6 @@ require "../includes/conexion.php";
  		}
  	}
 
-
- /*$query=mysqli_query($conexion,"insert into noticia (titulo,noticias,fecha) values (' ".$_POST['titulo']."','".$_POST['noticia']."' ,NOW())" );
- if ($query) {    
- 	 	 echo "<h1>la noticia se inserto correctamente .</h1>";
- 	 }
- 	 
- $ss=mysqli_query($conexion,"SELECT MAX(id_not) as id_maximo FROM noticia");
- if ($rr=mysqli_fetch_array($ss)) {
- 	   $id_maximo=$rr['id_maximo'];
- }
-		 $nameimagen=$_FILES['img']['name'];
-		 $tmpimagen=$_FILES['img']['tmp_name'];
-		 $urlnueva="../img/foto_".$id_maximo.".jpg";
-		 if (is_uploaded_file($tmpimagen)) {
-		 	copy($tmpimagen,$urlnueva);
-		 	
-		 }else{
-		 	echo "error";
-		 	 
- }*/
  }
 
 

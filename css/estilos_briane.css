@@ -2,20 +2,66 @@
 	width: 100%;
     padding: 0px 1px 0px 15px;
 }
-.seccion1BI h2{
-	
-	font-size: 35px;	
+
+.seccion1BI h2{	
 	color: #575756;
 	
 }
+.historia {
+    height: 750px;
+	font-size:15px;
+}
+.seccion1BI h5{
+	color: #E20613; 
+}
+
 .seccion1BI h3{
 	border-bottom: 2px solid #E20613;
 }
+.seccion4BD h3{
+		border-bottom: 2px solid #E20613;
+
+}
+.seccion4BD h2{
+		color: #575756;
+
+}
+.hologa_item{
+	width: 250px; 
+	height: 150px;
+	margin-left:20px; 
+	margin-top:20px;
+
+}
+
+.pri_holaga_item{
+	display: flex;
+}
+
+ol.carousel-indicators {
+ 
+	position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: auto; 
+}
+ol.carousel-indicators li
+{
+  float: left;
+  width: 14%;
+  height: 10px;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background: #e2e2e2;
+}
+ol.carousel-indicators li.active {
+	background-color: rgba(0,0,0,0.85);
+}
 .seccion1BI p {
-	
-	color: #E20613;
-	font-weight: bold;
-    font-size:16px;
+    font-size: 15px;
 }
 .briane_parte2{
 	margin: auto;
@@ -23,16 +69,50 @@
 	max-width: 1550px;
 padding-top: 60px;
 }
-.historia-cronologia  {
-	margin-top: 30px;
-	border-right: 1px solid #323232;
+.parrafo3{
+	
+	height: 750px;
+	width: 100%;
+	background: #fff fixed no-repeat 50% 50%;
+	background-size: cover;
+	margin: auto;
 
+} 
+#seccion3{
+	background-image: url('../img/cultura_imagen.jpg');
 }
+
+.seccion2BD .text {
+    height: 200px;
+    overflow: hidden;
+    padding-left: 10px;
+    }
 .historia-cronologia a {
 	margin-top: 20px;
+    padding-left: 15px;
+    width: 80px;
+    position: relative;
+    z-index: 1;
+    background: #999da0;
 
-	padding-left:15px;
-	width: 80px;
+}
+.history-form {
+    margin: 0rem auto;
+    position: relative;
+    padding: 0rem;
+}
+.history-form:after {
+   content: "";
+    border-left: 2px solid #999da0;
+    height: 92%;
+    position: absolute;
+    top: 22px;
+    left: 2rem;
+    z-index: 0;
+}
+.history-crono-content img {
+    width: 484px;
+    padding: 10px;
 }
 .parte2 {
 margin: auto;
@@ -40,9 +120,32 @@ margin: auto;
 	max-width: 1550px;
 padding-top: 60px;
 }
+.seccion2BD {
+    height: 600px;
+    padding-top: 25px;
+}
+.seccion1BD {
+    height: 600px;
+    padding-top: 45px;
+}
+.nav-tabs .nav-link {
+    
+    border-radius: 15%;
+}
+.seccion2BD img {
+    margin-top: 20px;
+  
+}
+.colum1 {
+    word-wrap: break-word;
+}
+.colum2 {
+        height: 568px;
+    padding-top: 29px;
+}
 .seccion3BI{
-	margin-top: -400px;
-	width: 470px;
+	margin-top: 400px;
+    width: 470px;
 }
 .seccion3BI h2{
 	
@@ -63,39 +166,28 @@ padding-top: 60px;
 	
 }
 .seccion2BI h2{
-	font-size: 30px;
-	
-}
-
-.seccion2BI h4{
 	
 	color: #575756;
+}
+
+.seccion2BI h5{
+	
+	color: #E20613;
 	
 }
 .seccion2BI h3{
 	border-bottom: 2px solid #E20613;
 }
 .seccion2BI p {
-	
-	color: #E20613;
-	font-weight: bold;
-    font-size:16px;
+	font-size:15px;
 }
 .seccion2BD h2{
 	font-size: 16px;
 	color: #212529;
 }
-.seccion2BD img{
-	margin-top: 20px;
-	margin-right: 80px;
-}
+
 .seccion2BD h3{
 	border-bottom: 2px solid #E20613;
-}
-.homologacion  {
-	
-
-
 }
 .homologacion .btn-secondary  {
 	margin-left: 120px;

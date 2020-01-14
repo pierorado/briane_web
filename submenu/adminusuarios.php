@@ -94,8 +94,7 @@ include "../includes/conexion.php";
 		$desde =($pagina-1)*$por_pagina;
 		$total_paginas=ceil($total_page/$por_pagina);
 
-		$consulta="SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,u.telefono,u.correo,u.nombre,u.paterno,u.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo 
-			ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
+		$consulta="SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.numero = p.id_numero ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
 		$respuesta=mysqli_query($conexion,$consulta);
 		$fila=mysqli_num_rows($respuesta);
 		if ($fila>0) {

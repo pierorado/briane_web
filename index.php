@@ -17,6 +17,8 @@ include "includes/conexion.php";
 	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/ico_briane.ico">
+	<link rel="stylesheet" type="text/css" href="css/lightbox.min.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 <body style="background-color: #F8F8F8">
 	<header>		 
@@ -91,46 +93,53 @@ include "includes/conexion.php";
 	 	
 	  </nav> 
 	</header>
-	<section class="banner">
-		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"   >
-					  <div class="carousel-inner"  >
-					    <div class="carousel-item active">
-					      <img src="img/portada2.png" class="d-block w-100" alt="..." >
-					    </div>
-					    <div class="carousel-item">
-					      <img src="img/portada1.png" class="d-block w-100" alt="..." >
-					    </div>
-					    <div class="carousel-item">
-					      <img src="img/portada3.png" class="d-block w-100" alt="..." >
-					    </div>
-					  </div>
-					  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-					  	<div class="circulo">
-					    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-					    <span class="sr-only">Previous</span>
-					    </div>
-					  </a>
-					  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-					  	<div class="circulo">
-					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Next</span>
-					    </div>
-					  </a>
-		</div>
-		<div class ="img_valor1">
-			<div class="val11">
-				<a href="submenu/unete.html"><img src="img/unete.png" ></a>
-			</div>
-			<div class="val22">
-				<img src="img/valor11.png" >
-			</div>
-	     	
-	  	 	
-	  	 	
-	  	 	
-	  	 </div>
+	
+	<div class="banerPrincipal">
+	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+	  
+	  <div class="carousel-inner">
+	    <div class="carousel-item active">
+	      <img src="https://www.briane.pe/img/portada2.jpg" class="d-block w-100" alt="...">
+	      <div class="carousel-letters ">
+        <h5 class="animated fadeInUp" style="animation-delay: 1s">CALIDAD EN EL SERVICIO</h5>
+        
+        <p class="animated fadeInUp" style="animation-delay: 2s"><a href="">ÚNETE AL EQUIPO BRIANE</a></p>
+      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <img src="https://www.briane.pe/img/portada1.jpg" class="d-block w-100" alt="...">
+	      <div class="carousel-letters">
+        <h5 class="animated fadeInUp" style="animation-delay: 1s">CONTROL DE OPERACIONES</h5>
+        
+        <p class="animated fadeInUp" style="animation-delay: 2s"><a href="">ÚNETE AL EQUIPO BRIANE</a></p>
+      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <img src="https://www.briane.pe/img/portada3.jpg" class="d-block w-100" alt="...">
+	      <div class="carousel-letters">
+        <h5 class="animated fadeInUp" style="animation-delay: 1s">JUNTOS CON NUESTRA COMUNIDAD</h5>
+     
+        <p class="animated fadeInUp" style="animation-delay: 2s"><a href="">ÚNETE AL EQUIPO BRIANE</a></p>
+      </div>
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+	  	<div class="circulo">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	    </div>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+	  	<div class="circulo">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	    </div>
+	  </a>
+	</div>
+	</div>
 
-	</section>	
+
+
 	 	<div id="pestañas">
  	 <div class="box">
     	<ul>
@@ -353,46 +362,48 @@ include "includes/conexion.php";
 		 	</div>
 		 	
 		 	 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="">
-			  <ol class="carousel-indicators">
-			    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			  </ol>
+			  
 			  <div class="carousel-inner" >
 			    <div class="carousel-item active" >
-			    	<div class="imagen1" style=" width: 250px; height: 150px;margin-left:20px; margin-top:20px;" >
-			    	<img src="img/empresa1.jpeg" data-toggle="modal" data-target="#zoom1">	
+			    	<div class="gallery_item" >
+			    	<a href="img/empresa1.jpeg" data-lightbox="mygallery"><img src="img/empresa1.jpeg" class="gallery_img"></a>	
 			    	</div>
-			    	<div class="imagen2" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
-			    		<img src="img/empresa2.jpeg" data-toggle="modal" data-target="#zoom2">
+			    	<div class="gallery_item"  >
+			    		<a href="img/empresa2.jpeg" data-lightbox="mygallery"><img src="img/empresa2.jpeg" class="gallery_img"></a>	
+			    		
 			    	</div>
-			    	<div class="imagen3" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
-			    		<img src="img/estandar1.jpeg" data-toggle="modal" data-target="#zoom3">
+			    	<div class="gallery_item"  >
+			    		
+			    		<a href="img/estandar1.jpeg" data-lightbox="mygallery"><img src="img/estandar1.jpeg" class="gallery_img"></a>	
 			    	</div>
 			      
 			    </div>
 			    <div class="carousel-item">
-			      <div class="imagen4" style=" width: 250px; height: 150px;margin-left:20px; margin-top:20px;" >
-			    		<img src="img/estandar2.jpeg" data-toggle="modal" data-target="#zoom4">
-			    		<!-- Modal -->
+			      <div class="gallery_item"  >
+			    		
+			    		<a href="img/estandar2.jpeg" data-lightbox="mygallery"><img src="img/estandar2.jpeg" class="gallery_img"></a>	
 							
 			    	</div>
-			    	<div class="imagen5" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
-			    		<img src="img/estandar3.jpeg" data-toggle="modal" data-target="#zoom5">
+			    	<div class="gallery_item"  >
+			    		
+			    		<a href="img/estandar3.jpeg" data-lightbox="mygallery"><img src="img/estandar3.jpeg" class="gallery_img"></a>	
 			    	</div>
-			    	<div class="imagen6" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
+			    	<div class="gallery_item"  >
 			    		<img src="img/flota1.jpeg" data-toggle="modal" data-target="#zoom6">
 			    	</div>
 			    </div>
 			    <div class="carousel-item">
-			    <div class="imagen7" style=" width: 250px; height: 150px;margin-left:20px; margin-top:20px;" >
-			    		<img src="img/galeria1.jpg" data-toggle="modal" data-target="#zoom7">
+			    <div class="gallery_item"  >
+			    		
+			    		<a href="img/galeria1.jpg" data-lightbox="mygallery"><img src="img/galeria1.jpg" class="gallery_img"></a>	
 			    	</div>
-			    	<div class="imagen8" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
-			    		<img src="img/galeria2.jpg" data-toggle="modal" data-target="#zoom8">
+			    	<div class="gallery_item"  >
+			    		
+			    		<a href="img/galeria2.jpg" data-lightbox="mygallery"><img src="img/galeria2.jpg" class="gallery_img"></a>	
 			    	</div>
-			    	<div class="imagen9" style=" width: 250px; height: 150px;margin-top:10px;margin-left:20px; " >
-			    		<img src="img/galeria3.jpg" data-toggle="modal" data-target="#zoom9">
+			    	<div class="gallery_item" >
+			    		
+			    		<a href="img/galeria3.jpg" data-lightbox="mygallery"><img src="img/galeria3.jpg" class="gallery_img"></a>	
 			    	</div>
 			    </div>
 			  </div>
@@ -406,133 +417,6 @@ include "includes/conexion.php";
 			  </a>
 		</div>
 		 </div>
-
-
-			<div id="zoom1" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/empresa1.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-			<div id="zoom2" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/empresa2.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-			<div id="zoom3" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/estandar1.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-					 <div id="zoom4" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/estandar2.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-					 <div id="zoom5" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/estandar3.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-						<div id="zoom6" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/flota1.jpeg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-						<div id="zoom7" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/galeria1.jpg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-						<div id="zoom8" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/galeria2.jpg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
-						<div id="zoom9" class="modal fade" role="dialog">
-										  <div class="modal-dialog">
-										    <!-- Modal content-->
-										    <div class="modal-content" style="z-index: 1000;">
-										      <div class="modal-header">
-										        <button type="button" class="close" data-dismiss="modal">&times;</button> 
-										      </div>
-										      <div class="modal-body" style="">
-										       <img src="img/galeria3.jpg" style="width: 100% ;">
-										      </div>
-										    </div>
-										  </div>
-										</div>
-
 
 		 <div class="contenedor-noticias">
 		 <div class="encabezado-noticia">
@@ -563,6 +447,44 @@ include "includes/conexion.php";
 		  </div>
 
 		 </section>
+
+		 
+
+	<div class="chat_principal">
+		
+		<div class="chat_body">
+			<div class="chat_cont">
+			<div class="box-chat-circulo"></div>
+			<h5>Atención al cliente</h5>
+             <form  method="post" autocomplete="off">
+
+             	<div class="form-group">
+				    <label >Nombres</label>
+				    <input type="text" class="form-control" name="nombre" id="nombre" >
+				  </div>
+				  <div class="form-group">
+				    <label >Apellidos</label>
+				    <input type="text" class="form-control" name="apellido" id="apellido">
+				  </div>
+				  <div class="form-group">
+				    <label >Correo</label>
+				    <input type="email" class="form-control"  name="correo" id="correo">
+				  </div>
+				  <div class="form-group">
+				    <label f>¿Como podemos ayudarte?</label>
+				    <textarea class="form-control" rows="3" name="mensaje" id="mensaje"></textarea>
+				  </div>
+				  <div id="response"></div>
+				  <button type="button" id="but_submit"  value="enviar" class="btn btn-danger" >Enviar</button>
+				 	
+				 	
+			</form>
+			</div>
+		</div>
+		<div class="chat-circulo" id="chat-circulo">
+		<i class="fas fa-comment-alt"></i>
+		</div>
+	</div>
 
 	<a class="back-to-top"><i class="fas fa-arrow-circle-up"></i></a>
 	
@@ -617,6 +539,35 @@ include "includes/conexion.php";
 	  		</footer>
 
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+	  			$(document).ready(function(){
+	  				$("#but_submit").click(function(){
+
+	  					var nombre = $("#nombre").val().trim();
+	  					var apellido = $("#apellido").val().trim();
+	  					var correo = $("#correo").val().trim();
+	  					var mensaje = $("#mensaje").val().trim();
+
+	  					$.ajax({
+	  						url:'enviar.php',
+	  						type:'post',
+	  						data:{
+	  							"nombre":nombre,"apellido":apellido,"correo":correo,mensaje:"mensaje"},
+	  							success:function(response){
+	  								var msg = "";
+	  								$("#response").html(response);
+
+	  							}
+	  						});
+
+
+
+	  				});
+	  			});
+
+
+	  		</script>
+		<script type="text/javascript" src="js/lightbox-plus-jquery.min.js"></script>
 		<script type="text/javascript" src="js/manta.js"></script>
 		<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -69,7 +69,7 @@ include "../includes/conexion.php";
 
 			<div class="card-body">
 
-			<form method="post" action="admin_operaregister.php" class="form-group" autocomplete="off" >
+			<form method="post" action="admin_operaregister.php" class="form-group" enctype="multipart/form-data" autocomplete="off" >
 				<?php 
 
 		     $sqltipo=mysqli_query($conexion,"SELECT * FROM tipo_documento");
@@ -150,7 +150,13 @@ include "../includes/conexion.php";
              <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="formGroupExampleInput">Correo </label>
 			<input type="text" class="form-control" id="formGroupExampleInput" required placeholder="Ingrese usuario" name="correo" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
 		     </div>
-
+		     <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="textfield">Imagen </label>
+		     <div class="opcion">
+		     	<input type="file" class="form-control" name="foto" id="img" >
+		     </div>
+			
+		
+			
 
 		   <div class="opcion">
 		   	<i class="fa fa-lock  fa-2x cust" aria-hidden="true"></i><label for="formGroupExampleInput">CONTRASEÑA</label>
