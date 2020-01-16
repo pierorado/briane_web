@@ -25,9 +25,9 @@ $nombre_foto = $foto['name'];
  		}
 			$registro="INSERT INTO profile(id_numero,nombre,paterno,materno,telefono,correo,imagen)VALUES('$numero2','$nombre','$paterno','$materno','$telefono','$correo','$imgProfile')";
 
-			$registro2="INSERT INTO usuarios(idtipo,idrol,clave,numero)VALUES('$tipodoc','$tiporol','$clave','$numero2')";
+			$registro2="INSERT INTO usuarios(idtipo,idrol,clave,profile_id_numero)VALUES('$tipodoc','$tiporol','$clave','$numero2')";
 			
-			$consulta="select * from usuarios where  numero='$numero2'" ;
+			$consulta="select * from usuarios where  profile_id_numero='$numero2'" ;
 		
 
 //seleccion que debe ser verdadera 

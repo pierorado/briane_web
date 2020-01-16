@@ -27,7 +27,7 @@ session_start();
 			header("Content-Type: text/html; charset=utf-8");
 		//seleccion que debe ser verdadera 
 
-			$consulta="select u.numero,u.clave,p.nombre,p.imagen ,u.idrol,p.paterno,p.materno from usuarios u  INNER JOIN profile p ON u.numero=p.id_numero where  numero='76202977' and clave='PIEROdead1998' and idtipo='1'";
+			$consulta="select u.profile_id_numero,u.clave,p.nombre,p.imagen ,u.idrol,p.paterno,p.materno from usuarios u  INNER JOIN profile p ON u.profile_id_numero=p.id_numero where  profile_id_numero='$numero2' and clave='$clave' and idtipo='$tipo'";
 
 		$resultado=mysqli_query($conexion,$consulta);//ejecuta
 		mysqli_close($conexion);
@@ -36,7 +36,7 @@ session_start();
 				if ($fila > 0 ) {  //si consigue un dato
 				$row=mysqli_fetch_array($resultado);
 					$_SESSION['active']=true;		
-					$_SESSION['num']=$row['numero'];
+					$_SESSION['num']=$row['profile_id_numero'];
 					$_SESSION['tipo']=$row['idtipo'];
 					$_SESSION['rol']=$row['idrol'];
 					$_SESSION['name']=$row['nombre'];

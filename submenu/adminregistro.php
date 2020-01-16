@@ -150,8 +150,10 @@ include "../includes/conexion.php";
              <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="formGroupExampleInput">Correo </label>
 			<input type="text" class="form-control" id="formGroupExampleInput" required placeholder="Ingrese usuario" name="correo" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
 		     </div>
-		     <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="textfield">Imagen </label>
+
+		     
 		     <div class="opcion">
+		     	<i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="textfield">Imagen </label>
 		     	<input type="file" class="form-control" name="foto" id="img" >
 		     </div>
 			

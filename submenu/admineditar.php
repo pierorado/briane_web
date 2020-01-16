@@ -19,7 +19,7 @@ if (empty($_GET['idusuario'])) {
 			# code...
 		}
 		$idusuario=$_GET['idusuario'];
-		$sql=mysqli_query($conexion,"SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.numero = p.id_numero WHERE u.idusuario=$idusuario");
+		$sql=mysqli_query($conexion,"SELECT u.idusuario,u.profile_id_numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno,p.imagen FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.profile_id_numero = p.id_numero WHERE u.idusuario=$idusuario");
 		$result=mysqli_num_rows($sql);
 		if ($result==0) {
 			header('Location:adminusuarios.php');
@@ -27,9 +27,9 @@ if (empty($_GET['idusuario'])) {
 
 			while ($data=mysqli_fetch_array($sql)) {
  			 $idusu=$data["idusuario"];
-			 $num=$data["numero"];
-			 $num2=$data["numero"];
-			 $num3=$data["numero"];
+			 $num=$data["profile_id_numero"];
+			 $num2=$data["profile_id_numero"];
+			 $num3=$data["profile_id_numero"];
 			 $idtipo=$data["idtipo"];
 			 $docum=$data["documento"];
 			 $idrol=$data["idrol"];
@@ -40,24 +40,8 @@ if (empty($_GET['idusuario'])) {
 			 $nom=$data["nombre"];
 			 $pater=$data["paterno"];
 			 $mater=$data["materno"];
-
-			 if ($idrol==1) {
-			 	  $option='<option value="'.$idrol.'"select>'.$rol.'</option>';
-			 }else if ($idrol==2) {
-			 	 $option='<option value="'.$idrol.'"select>'.$rol.'</option>';
-			 }else if ($idrol==3) {
-			 	$option='<option value="'.$idrol.'"select>'.$rol.'</option>';
-			 }
-
-			 if ($idtipo==1) {
-			 	 $option2='<option value="'.$idtipo.'"select>'.$docum.'</option>';
-			 }else if ($idtipo==2) {
-			 	 $option2='<option value="'.$idtipo.'"select>'.$docum.'</option>';
-			 }else if ($idtipo==3){
-			 	 $option2='<option value="'.$idtipo.'"select>'.$docum.'</option>';
-			 }
+			 $imge=$data["imagen"];
 			 
-
 			}
 		}
 ?>
@@ -123,12 +107,14 @@ if (empty($_GET['idusuario'])) {
 
 		     ?>
 			<input type="hidden" name="iduser" value="<?php echo $idusu; ?>">
+			<input type="hidden" name="numant" value="<?php echo $num2; ?>">
 			<div class="opcion">
 
              <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="formGroupExampleInput">Tipo de Documento: </label>
 			<select required id="idTipoDocumento" name="tipodoc" class="invione">
+				<option value="<?php echo $idtipo ?>" selected><?php echo $docum ?></option>
 				<?php 
-				  echo $option2 ;
+				 
 				  	if ($restipo >0) {
 				  	    while ($tipo=mysqli_fetch_array($sqltipo)) {
 				  				?>
@@ -161,12 +147,17 @@ if (empty($_GET['idusuario'])) {
 		     <div class="opcion">
              <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="formGroupExampleInput4">Tipo de Usuario: </label>
 			<select required id="tiporol" name="tiporol" class="invione">
+				<option value="<?php echo $idrol ?>" selected><?php echo $rol ?></option>
+			
 				  <?php 
-				  echo $option;
+				  
 				  	if ($resrol >0) {
 				  	    while ($rol=mysqli_fetch_array($sqlrol)) {
+
 				  				?>
+
 				  				<option value="<?php echo $rol["id_rol"]; ?>"><?php echo $rol["rol"]; ?></option>
+
 				  				<?php 
 				  			}	
 				  	}
@@ -201,7 +192,11 @@ if (empty($_GET['idusuario'])) {
              <i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="formGroupExampleInput9">Correo </label>
 			<input type="text" class="form-control" id="formGroupExampleInput9" required placeholder="Ingrese usuario" name="correo" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" value="<?php echo $email; ?>">
 		     </div>
-
+		     
+		     	<div class="opcion">
+		     	<i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="textfield">Imagen </label>
+		     	<input type="file" class="form-control" name="foto" id="img" >
+		     </div>
 
 		   <div class="opcion">
 		   	<i class="fa fa-lock  fa-2x cust" aria-hidden="true"></i><label for="formGroupExampleInput1">CONTRASEÑA</label>

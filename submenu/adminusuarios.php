@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-
-
-
 error_reporting(0);
 $inicio=$_SESSION['active'];
 if ($inicio==null || $inicio='') {
@@ -94,7 +90,7 @@ include "../includes/conexion.php";
 		$desde =($pagina-1)*$por_pagina;
 		$total_paginas=ceil($total_page/$por_pagina);
 
-		$consulta="SELECT u.idusuario,u.numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.numero = p.id_numero ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
+		$consulta="SELECT u.idusuario,u.profile_id_numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.profile_id_numero = p.id_numero ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
 		$respuesta=mysqli_query($conexion,$consulta);
 		$fila=mysqli_num_rows($respuesta);
 		if ($fila>0) {
@@ -104,7 +100,7 @@ include "../includes/conexion.php";
 				<tbody>
 				<tr>
 			<td scope="row"><?php echo $datos["idusuario"];?></td>
-			<td><?php echo $datos["numero"];?></td>
+			<td><?php echo $datos["profile_id_numero"];?></td>
 			<td><?php echo $datos["documento"];?></td>
 			<td><?php echo $datos["rol"];?></td>
 			<td><?php echo $datos["clave"];?></td>
@@ -115,7 +111,7 @@ include "../includes/conexion.php";
 			<td><?php echo $datos["materno"];?></td>
 			<td>
 				<a href="admineditar.php?idusuario=<?php echo $datos['idusuario'];?>" class="btn btn-info" role="button" aria-pressed="true">Editar</a>
-				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>&numero=<?php echo $datos["numero"];?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
+				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>&numero=<?php echo $datos["profile_id_numero"];?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
 			</td>
 		</tr>
 	</tbody>
