@@ -19,7 +19,7 @@ $nombre_foto = $foto['name'];
  		if ($nombre_foto != '') {
  			$destino = '../img/profile/';
  			$img_nombre = 'img_'.md5(date('d-m-y H:m:s'));
- 			$imgProfile = $nombre.'.jpg';
+ 			$imgProfile = $img_nombre.'.jpg';
  			$src  = $destino.$imgProfile;
 
  		}

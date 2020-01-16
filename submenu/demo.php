@@ -27,7 +27,7 @@ session_start();
 			header("Content-Type: text/html; charset=utf-8");
 		//seleccion que debe ser verdadera 
 
-			$consulta="select u.profile_id_numero,u.clave,p.nombre,p.imagen ,u.idrol,p.paterno,p.materno from usuarios u  INNER JOIN profile p ON u.profile_id_numero=p.id_numero where  profile_id_numero='$numero2' and clave='$clave' and idtipo='$tipo'";
+			$consulta="select u.profile_id_numero,u.clave,p.nombre,p.imagen ,u.idrol,p.paterno,p.materno,p.correo,p.telefono,t.rol from usuarios u INNER JOIN profile p ON u.profile_id_numero=p.id_numero INNER JOIN tipo_usuario t ON u.idrol=t.id_rol where  profile_id_numero='$numero2' and clave='$clave' and idtipo='$tipo'";
 
 		$resultado=mysqli_query($conexion,$consulta);//ejecuta
 		mysqli_close($conexion);
@@ -38,7 +38,8 @@ session_start();
 					$_SESSION['active']=true;		
 					$_SESSION['num']=$row['profile_id_numero'];
 					$_SESSION['tipo']=$row['idtipo'];
-					$_SESSION['rol']=$row['idrol'];
+					$_SESSION['idrol']=$row['idrol'];
+					$_SESSION['rol']=$row['rol'];
 					$_SESSION['name']=$row['nombre'];
 					$_SESSION['contra']=$row['clave'];
 					$_SESSION['telef']=$row['telefono'];

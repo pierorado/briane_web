@@ -46,12 +46,12 @@ if ($inicio==null || $inicio='') {
 				</div>
 				<li class="active2"><a href="panel.php">Panel</a></li>
 				<?php
-				if ($_SESSION['rol']== 1) {
+				if ($_SESSION['idrol']== 1) {
 					?>
 					<li><a href="adminoticia.php">Agregar Noticias</a></li>
 					<li><a href="adminofertas.php">Agregar ofertas</a></li>
 					<li><a href="adminusuarios.php">Usuarios</a></li>
-				<?php }else if($_SESSION['rol']== 3){?>
+				<?php }else if($_SESSION['idrol']== 3){?>
 					<li><a href="adminoticia.php">Agregar Noticias</a></li>
 				<?php }?>
 				<li><a href="adminprofile.php">Perfil</a></li>
@@ -63,8 +63,6 @@ if ($inicio==null || $inicio='') {
 	</header>
 
 	<div class="informacion">
-		<p>Bienvenido <?php echo $_SESSION['name'].'-'.$_SESSION['rol']; ?></p>
-
 		<br>
 		
 				<div class="card">

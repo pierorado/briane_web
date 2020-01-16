@@ -41,7 +41,7 @@ include "../includes/conexion.php";
 	 				</div>
 	 				<li ><a href="panel.php">Panel</a></li>
 	 				<?php
-			if ($_SESSION['rol']== 1) {
+			if ($_SESSION['idrol']== 1) {
 			 ?>
 			<li><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>
@@ -90,7 +90,7 @@ include "../includes/conexion.php";
 		$desde =($pagina-1)*$por_pagina;
 		$total_paginas=ceil($total_page/$por_pagina);
 
-		$consulta="SELECT u.idusuario,u.profile_id_numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.profile_id_numero = p.id_numero ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
+		$consulta="SELECT u.idusuario,u.profile_id_numero,d.documento,r.rol,u.clave,p.telefono,p.correo,p.nombre,p.paterno,p.materno,p.imagen FROM `usuarios` u INNER JOIN tipo_usuario r ON u.idrol = r.id_rol INNER JOIN tipo_documento d ON u.idtipo = d.id_tipo INNER JOIN profile p ON u.profile_id_numero = p.id_numero ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina " ;
 		$respuesta=mysqli_query($conexion,$consulta);
 		$fila=mysqli_num_rows($respuesta);
 		if ($fila>0) {
@@ -111,7 +111,7 @@ include "../includes/conexion.php";
 			<td><?php echo $datos["materno"];?></td>
 			<td>
 				<a href="admineditar.php?idusuario=<?php echo $datos['idusuario'];?>" class="btn btn-info" role="button" aria-pressed="true">Editar</a>
-				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>&numero=<?php echo $datos["profile_id_numero"];?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
+				<a href="admineliminar.php?idusuario=<?php echo $datos['idusuario'];?>&numero=<?php echo $datos["profile_id_numero"];?>&foto=<?php echo $datos['imagen']?>" class="btn btn-danger" role="button" aria-pressed="true">Eliminar</a>
 			</td>
 		</tr>
 	</tbody>

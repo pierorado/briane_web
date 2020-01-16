@@ -7,7 +7,7 @@ if ($inicio==null || $inicio='') {
 
 	die();
 }else{
-if ($_SESSION['rol']!= 1) {
+if ($_SESSION['idrol']!= 1) {
  	header("location:panel.php");
 }
 
@@ -47,7 +47,7 @@ include "../includes/conexion.php";
 	 				</div>
 	 				<li ><a href="panel.php">Panel</a></li>
 	 				<?php
-			if ($_SESSION['rol']== 1) {
+			if ($_SESSION['idrol']== 1) {
 			 ?>
 			<li><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>

@@ -7,7 +7,7 @@ if ($inicio==null || $inicio='') {
 
 	die();
 }else{
-if ($_SESSION['rol']!= 1) {
+if ($_SESSION['idrol']!= 1) {
  	header("location:panel.php");
 }
 
@@ -76,7 +76,7 @@ if (empty($_GET['idusuario'])) {
 	 				</div>
 	 				<li ><a href="panel.php">Panel</a></li>
 	 				<?php
-			if ($_SESSION['rol']== 1) {
+			if ($_SESSION['idrol']== 1) {
 			 ?>
 			<li><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>
@@ -99,7 +99,7 @@ if (empty($_GET['idusuario'])) {
 
 			<div class="card-body">
 
-			<form method="post" action="admin_operaeditar.php" class="form-group" autocomplete="off" >
+			<form method="post" action="admin_operaeditar.php" class="form-group"  enctype="multipart/form-data" autocomplete="off" >
 				<?php 
 
 		     $sqltipo=mysqli_query($conexion,"SELECT * FROM tipo_documento");
@@ -193,7 +193,7 @@ if (empty($_GET['idusuario'])) {
 			<input type="text" class="form-control" id="formGroupExampleInput9" required placeholder="Ingrese usuario" name="correo" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" value="<?php echo $email; ?>">
 		     </div>
 		     
-		     	<div class="opcion">
+		     <div class="opcion">
 		     	<i class="fa fa-user fa-2x cust" aria-hidden="true"></i> <label for="textfield">Imagen </label>
 		     	<input type="file" class="form-control" name="foto" id="img" >
 		     </div>

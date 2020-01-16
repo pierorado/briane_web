@@ -49,7 +49,7 @@ include "../includes/conexion.php";
 	 				</div>
 	 				<li ><a href="panel.php">Panel</a></li>
 	 				<?php
-			if ($_SESSION['rol']== 1) {
+			if ($_SESSION['idrol']== 1) {
 			 ?>
 			<li><a href="adminoticia.php">Agregar Noticias</a></li>
 			<li><a href="adminofertas.php">Agregar ofertas</a></li>
@@ -112,7 +112,14 @@ include "../includes/conexion.php";
                                     <?php echo $_SESSION['matern']?>
                                 </address>
                             </dd>
-                            
+
+                            <dt class="col-sm-3">Tipo</dt>
+                            <dd class="col-sm-9">
+                                <address class="mb-0">
+                                    <?php echo $_SESSION['rol']?>
+                                </address>
+                            </dd>
+                           
                             <dt class="col-sm-3">Correo</dt>
                             <dd class="col-sm-9">
                                 <a href="mailto:aang.is.kefy@gmail.com"><is class="ke"></is><?php echo $_SESSION['msm']?></a>
@@ -134,7 +141,7 @@ include "../includes/conexion.php";
                         </dl>
                     </div>
 			      </div>
-			      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">..4.</div>
+			      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">*</div>
 			    </div>
 			  </div>
             
