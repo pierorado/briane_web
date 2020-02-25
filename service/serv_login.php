@@ -9,7 +9,7 @@ if (isset($_GET['profile_id_numero'])&& isset($_GET["clave"])&& isset($_GET['tip
 	$profile_id_numero=$_GET['profile_id_numero'];
 	
 
-	$consulta="select u.profile_id_numero,u.clave,p.nombre,p.imagen from usuarios u  INNER JOIN profile p ON u.profile_id_numero=p.id_numero where  profile_id_numero='{$profile_id_numero}' and clave='{$clave}' and idtipo='{$tipo}' and idrol='4'";
+	$consulta="select u.profile_id_numero,u.clave,p.nombre,p.imagen,p.correo from usuarios u  INNER JOIN profile p ON u.profile_id_numero=p.id_numero where  profile_id_numero='{$profile_id_numero}' and clave='{$clave}' and idtipo='{$tipo}' and idrol='4'";
 
 	$resultado=mysqli_query($conexion,$consulta);
 	if ($consulta) {

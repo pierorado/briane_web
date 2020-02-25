@@ -51,6 +51,15 @@ if ($inicio==null || $inicio='') {
 					<li><a href="adminoticia.php">Agregar Noticias</a></li>
 					<li><a href="adminofertas.php">Agregar ofertas</a></li>
 					<li><a href="adminusuarios.php">Usuarios</a></li>
+					<li><a href="#">Paginas
+					<span class="drop-icon">▾</span>
+ 					<label title="Toggle Drop-down" class="drop-icon" for="sm2">▾</label>
+ 					</a>
+						<input type="checkbox" id="sm2">
+						<ul class="sub-menu">
+							<li><a href="../CMS/pages/pg_history.php">Historia</a></li>
+						</ul>
+					</li>
 				<?php }else if($_SESSION['idrol']== 3){?>
 					<li><a href="adminoticia.php">Agregar Noticias</a></li>
 				<?php }?>

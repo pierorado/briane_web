@@ -361,7 +361,7 @@ font-size: 45PX;
 
 /* GALERIA       */
 .contenedor-galeria{
-	margin-right: 30px;
+	margin-right: 45px;
 	float: left;
 	width: 290px;
 	height: 590px;
@@ -1358,14 +1358,26 @@ select#tiporol option:first-child {
 	margin: auto;
 
 }
-
-#pestañas{
-	width: 90%;
-	
-	margin: auto;
-	margin-top: -150px;
+.carousel-inner .carousel-item .carousel-letters{
+	width: 64%;
+    height: 84%;
 }
 
+.carousel-inner .carousel-item .carousel-letters h5{
+	font-size: 18px;
+}
+.carousel-inner .carousel-item .carousel-letters p{
+	font-size: 13px;
+}
+#pestañas{
+	width: 90%;
+	padding-top: 0px;
+	margin: auto;
+
+}
+.box{
+	width: 100%;
+}
 .box ul {
 	display: block;
 }
@@ -1381,14 +1393,13 @@ select#tiporol option:first-child {
 	width: 100%;
 
 }
-.pestaña_uno_derecha{
-	
-	float: left;
-	margin-left: -450px;
-}
-.pestaña_uno_derecha #carouselExampleInterval {
-	width: 45%;
-	
+
+
+
+#pestañas .box .pestaña_uno_derecha #carouselExampleInterval {
+	width: 100%;
+    float: left;
+	margin-left: 0px;
 }
 /*res_pesta2*/
 
@@ -1418,14 +1429,11 @@ select#tiporol option:first-child {
 .pestaña_tres_izquierda img{
 	width: 100%;
 }
-.pestaña_tres_derecha{
-	
-	float: left;
-	margin-left: -440px;
-}
-.pestaña_tres_derecha #carouselExampleControls {
-	width: 46%;
-	
+
+#pestañas .box .pestaña_tres_derecha #carouselExampleControls {
+	width: 100%;
+    float: left;
+	margin-left: 0px;
 }
 
 /*res_pesta4*/
@@ -1480,9 +1488,13 @@ width: 100%;
 .facebook-portada{
 margin: 0px;
 width: 100%;
+ margin-top: 30px;
 }
 .facebook-portada iframe{
 	width: 100%;
+}
+.contenedor-noticias{
+	 margin-left: 19px;
 }
 
 /*contactos*/

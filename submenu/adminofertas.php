@@ -7,7 +7,7 @@ if ($inicio==null || $inicio='') {
 
 	die();
 }else{
-if ($_SESSION['rol']!= 1) {
+if ($_SESSION['idrol']!= 1) {
  	header("location:panel.php");
 }
 

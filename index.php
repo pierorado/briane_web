@@ -39,16 +39,16 @@ include "includes/conexion.php";
 	 				
 			 		<li  class="active2"><a href="index.php" >VALOR AGREGADO</a></li>
 			 		
-			 		<li><a href="submenu/briane.html" >BRIANE
+			 		<li><a href="submenu/briane.php" >BRIANE
 			 			<span class="drop-icon">▾</span>
         				<label title="Toggle Drop-down" class="drop-icon" for="sm0">▾</label>
         				</a>
         				<input type="checkbox" id="sm0">
 			 			<ul class="sub-menu">
-			 				<li><a href="submenu/briane.html#seccion1" >Misión,vision,valores</a></li>
-			 				<li><a href="submenu/briane.html#seccion2" >Historia</a></li>
-			 				<li><a href="submenu/briane.html#seccion3" >Cultura Briane</a></li>
-			 				<li><a href="submenu/briane.html#seccion4" >Certificaciones</a></li>
+			 				<li><a href="submenu/briane.php#seccion1" >Misión,vision,valores</a></li>
+			 				<li><a href="submenu/briane.php#seccion2" >Historia</a></li>
+			 				<li><a href="submenu/briane.php#seccion3" >Cultura Briane</a></li>
+			 				<li><a href="submenu/briane.php#seccion4" >Certificaciones</a></li>
 			 			</ul>
 			 		</li>
 

@@ -1,3 +1,8 @@
+<?php
+require '../includes/funciones.php';
+include "../includes/conexion.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,16 +38,16 @@
 	 				
 			 		<li  ><a href="../index.php" >VALOR AGREGADO</a></li>
 			 		
-			 		<li class="active2"><a href="../submenu/briane.html" >BRIANE
+			 		<li class="active2"><a href="../submenu/briane.php" >BRIANE
 			 			<span class="drop-icon">▾</span>
         				<label title="Toggle Drop-down" class="drop-icon" for="sm0">▾</label>
         				</a>
         				<input type="checkbox" id="sm0">
 			 			<ul class="sub-menu">
-			 				<li><a href="../submenu/briane.html#seccion1" >Misión,vision,valores</a></li>
-			 				<li><a href="../submenu/briane.html#seccion2" >Historia</a></li>
-			 				<li><a href="../submenu/briane.html#seccion3" >Cultura Briane</a></li>
-			 				<li><a href="../submenu/briane.html#seccion4" >Certificaciones</a></li>
+			 				<li><a href="../submenu/briane.php#seccion1" >Misión,vision,valores</a></li>
+			 				<li><a href="../submenu/briane.php#seccion2" >Historia</a></li>
+			 				<li><a href="../submenu/briane.php#seccion3" >Cultura Briane</a></li>
+			 				<li><a href="../submenu/briane.php#seccion4" >Certificaciones</a></li>
 			 			</ul>
 			 		</li>
 
@@ -176,60 +181,54 @@
 			  
 			  <div class="colum1 col-9">
 			    <div class="history-crono-content tab-content" id="v-tabs-tabContent">
-			      <div class="tab-pane fade show active" id="v-tabs-primero" role="tabpanel" aria-labelledby="v-tabs-primero-tab">
-			      	<img src="../img/nosotros3.png"  >
-			      	<p class="text">Se fusionan las empresas Transportes Caravana y Considex S.A., dedicadas al transporte de minerales y alquiler de maquinarias; dando origen a la Compañía Minera San Martín.
-					Continúan las actividades en la operación de Cemento Andino en Tarma y transporte de yeso para Cemento Lima.
-					Cementos Lima y Cemento Andino, actualmente llamado Unacem, nos contrató para operar la cantera de Atocongo y como resultado de una buena operación nos amplió el contrato a otras canteras, como las ubicadas en Pucará. Hoy somos su principal contratista, con 27 años de trabajo continuo reafirmando día a día nuestro compromiso con el cliente.</p>
+
+
+
+			    	 <?php
+								  $i=1;
+					 				 $consul1="SELECT * FROM history ORDER BY id_ht  ";
+						  		$resrelac=$conexion->query($consul1);
+
+						  		$sqlimage=mysqli_query($conexion,$consul1);
+							     $resimage=mysqli_num_rows($sqlimage);
+
+						  		while ($corsl=mysqli_fetch_array($sqlimage)) {
+
+					 				?>
+			      <div class="tab-pane fade show <?php  if($i++ == 1 ){echo "active" ;} ?>" id="v-tabs-<?php echo $corsl['id_ht']; ?>" role="tabpanel" aria-labelledby="v-tabs-<?php echo $corsl['id_ht']; ?>-tab">
+			      	<img src="../img/sec_history/<?php echo $corsl['foto']; ?>"  >
+			      	<p class="text">S<?php echo  nl2br($corsl['descripcion']); ?></p>
 
 			      </div>
 
-			      <div class="tab-pane fade" id="v-tabs-segundo" role="tabpanel" aria-labelledby="v-tabs-segundo-tab">
-			      	2
-			       </div>
-			      <div class="tab-pane fade" id="v-tabs-tercero" role="tabpanel" aria-labelledby="v-tabs-tercero-tab">3 </div>
-			      <div class="tab-pane fade" id="v-tabs-cuarto" role="tabpanel" aria-labelledby="v-tabs-cuarto-tab"></div>
-			       <div class="tab-pane fade" id="v-tabs-quinto" role="tabpanel" aria-labelledby="v-tabs-quinto-tab">5</div>
+			       <?php
+						  		}
 
-			      <div class="tab-pane fade" id="v-tabs-sesto" role="tabpanel" aria-labelledby="v-tabs-sesto-tab">6</div>
-
-			      <div class="tab-pane fade" id="v-tabs-septimo" role="tabpanel" aria-labelledby="v-tabs-septimo-tab">7</div>
-
-			      <div class="tab-pane fade" id="v-tabs-octavo" role="tabpanel" aria-labelledby="v-tabs-octavo-tab">8</div>
-			      <div class="tab-pane fade" id="v-tabs-noveno" role="tabpanel" aria-labelledby="v-tabs-noveno-tab">9</div>
-			      <div class="tab-pane fade" id="v-tabs-decimo" role="tabpanel" aria-labelledby="v-tabs-decimo-tab">10</div>
-			      <div class="tab-pane fade" id="v-tabs-once" role="tabpanel" aria-labelledby="v-tabs-once-tab">11</div>
+						  		?>
 
 			    </div>
 			  </div>
 			  <div class="colum2 col-3">
 			  	<div class="history-form">
 			    <div class="nav flex-column nav-tabs" id="v-tabs-tab" role="tablist" aria-orientation="vertical">
-			      <a class="nav-link active" id="v-tabs-primero-tab" data-toggle="pill" href="#v-tabs-primero" role="tab" aria-controls="v-tabs-primero" aria-selected="true">1980</a>
 
-			      <a class="nav-link" id="v-tabs-segundo-tab" data-toggle="pill" href="#v-tabs-segundo" role="tab" aria-controls="v-tabs-segundo" aria-selected="false">1985</a>
+			    	<?php
+								  $i=1;
+					 				 $consul1="SELECT * FROM history ORDER BY id_ht  ";
+						  		$resrelac=$conexion->query($consul1);
 
-			      <a class="nav-link" id="v-tabs-tercero-tab" data-toggle="pill" href="#v-tabs-tercero" role="tab" aria-controls="v-tabs-tercero" aria-selected="false">1990</a>
+						  		$sqlimage=mysqli_query($conexion,$consul1);
+							     $resimage=mysqli_num_rows($sqlimage);
 
-			      <a class="nav-link" id="v-tabs-cuarto-tab" data-toggle="pill" href="#v-tabs-cuarto" role="tab" aria-controls="v-tabs-cuarto" aria-selected="false">1995</a>
+						  		while ($corsl=mysqli_fetch_array($sqlimage)) {
 
-			      <a class="nav-link" id="v-tabs-quinto-tab" data-toggle="pill" href="#v-tabs-quinto" role="tab" aria-controls="v-tabs-quinto" aria-selected="false">2000</a>
+					 				?>
+			      <a class="nav-link <?php  if($i++ == 1 ){echo "active" ;} ?>" id="v-tabs-<?php echo $corsl['id_ht']; ?>-tab" data-toggle="pill" href="#v-tabs-<?php echo $corsl['id_ht']; ?>" role="tab" aria-controls="v-tabs-<?php echo $corsl['id_ht']; ?>" aria-selected="true"><?php echo $corsl['año']; ?></a>
+			      	<?php
+						  		}
 
-			      <a class="nav-link" id="v-tabs-sesto-tab" data-toggle="pill" href="#v-tabs-sesto" role="tab" aria-controls="v-tabs-sesto" aria-selected="false">2005</a>
-
-			      <a class="nav-link" id="v-tabs-septimo-tab" data-toggle="pill" href="#v-tabs-septimo" role="tab" aria-controls="v-tabs-septimo" aria-selected="false">2010</a>
-
-			      <a class="nav-link" id="v-tabs-octavo-tab" data-toggle="pill" href="#v-tabs-octavo" role="tab" aria-controls="v-tabs-octavo" aria-selected="false">2015</a>
-
-			      <a class="nav-link" id="v-tabs-noveno-tab" data-toggle="pill" href="#v-tabs-noveno" role="tab" aria-controls="v-tabs-octavo" aria-selected="false">2016</a>
-
-			      <a class="nav-link" id="v-tabs-decimo-tab" data-toggle="pill" href="#v-tabs-decimo" role="tab" aria-controls="v-tabs-octavo" aria-selected="false">2018</a>
-
-			      <a class="nav-link" id="v-tabs-once-tab" data-toggle="pill" href="#v-tabs-once" role="tab" aria-controls="v-tabs-octavo" aria-selected="false">2020</a>
-
-
-
-
+						  		?>
+			      
 			    </div>
 			  </div>
 			</div>
@@ -315,7 +314,7 @@
 					    		<img src="../img/fernando1.png" >
 					    	</div>
 					    	<div class="hologa_item">
-					    		<img src="../img/redondos1.png" >
+					    		<a href="https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3Acffa5a41-b786-4a73-af8f-ed87c9413f48" target="_blank"><img src="../img/redondos1.png" ></a>
 					    	</div>
 					    	<div class="hologa_item">
 					    		<img src="../img/mixercon1.png" >
