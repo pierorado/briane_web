@@ -210,8 +210,7 @@ include "../includes/conexion.php";
 	  							success:function(response){
 	  								var msg = "";
 
-	  								$("#response_contra").html('');
-	  								$("#response_doc").html('');
+	  								
 	  								$("#response").html(response);
 
 	  							}

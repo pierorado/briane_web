@@ -2,7 +2,7 @@
    $host="localhost";
 	$usuario1="root";
 	$clave="";
-	$base="briane";
+	$base="briane19_adminbriane";
 
 	 $conexion=new mysqli($host,$usuario1,$clave,$base); 
 	

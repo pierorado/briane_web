@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 #
-# Configuration: Enter the url and key. That is it.
+# Configuration: Enter the url and key. That is it.s
 #  url => URL to api/task/cron e.g #  http://yourdomain.com/support/api/tickets.json
 #  key => API's Key (see admin panel on how to generate a key)
 #
